@@ -10,10 +10,11 @@
 #import <AddressBook/AddressBook.h>
 #import "ParseManager.h"
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate> {
     NSMutableDictionary *contacts;
 }
 
+- (void)showLoginUI:(UIViewController *)sender;
 
 @end
 
