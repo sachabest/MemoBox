@@ -35,6 +35,11 @@
 		192F41861A6A2B1500606DC8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41851A6A2B1500606DC8 /* SystemConfiguration.framework */; };
 		192F41881A6A2B1E00606DC8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41871A6A2B1E00606DC8 /* libz.dylib */; };
 		192F418A1A6A2B2700606DC8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41891A6A2B2700606DC8 /* libsqlite3.dylib */; };
+		FF81FF241A6A37890012A969 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF231A6A37890012A969 /* AVFoundation.framework */; };
+		FF81FF2A1A6A399D0012A969 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */; };
+		FF81FF2B1A6A399D0012A969 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */; };
+		FF81FF2C1A6A399D0012A969 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF281A6A399D0012A969 /* OpenEars.framework */; };
+		FF81FF2D1A6A399D0012A969 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF291A6A399D0012A969 /* Slt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,11 @@
 		192F41871A6A2B1E00606DC8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		192F41891A6A2B2700606DC8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		192F418B1A6A356200606DC8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FF81FF231A6A37890012A969 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		FF81FF281A6A399D0012A969 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		FF81FF291A6A399D0012A969 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF81FF241A6A37890012A969 /* AVFoundation.framework in Frameworks */,
+				192F41761A6A2AA200606DC8 /* AudioToolbox.framework in Frameworks */,
 				192F418A1A6A2B2700606DC8 /* libsqlite3.dylib in Frameworks */,
 				192F41881A6A2B1E00606DC8 /* libz.dylib in Frameworks */,
 				192F41861A6A2B1500606DC8 /* SystemConfiguration.framework in Frameworks */,
@@ -103,12 +115,13 @@
 				192F417C1A6A2AEC00606DC8 /* CoreLocation.framework in Frameworks */,
 				192F417A1A6A2AB500606DC8 /* CoreGraphics.framework in Frameworks */,
 				192F41781A6A2AAD00606DC8 /* CFNetwork.framework in Frameworks */,
-				192F41761A6A2AA200606DC8 /* AudioToolbox.framework in Frameworks */,
 				192F41711A6A2A9300606DC8 /* Parse.framework in Frameworks */,
 				192F41721A6A2A9300606DC8 /* ParseCrashReporting.framework in Frameworks */,
 				192F41741A6A2A9300606DC8 /* ParseUI.framework in Frameworks */,
 				192F41731A6A2A9300606DC8 /* ParseFacebookUtils.framework in Frameworks */,
+				FF81FF2D1A6A399D0012A969 /* Slt.framework in Frameworks */,
 				192F41701A6A2A9300606DC8 /* Bolts.framework in Frameworks */,
+				FF81FF2C1A6A399D0012A969 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +138,8 @@
 		192F412A1A6A011400606DC8 = {
 			isa = PBXGroup;
 			children = (
+				FF81FF251A6A399D0012A969 /* Framework */,
+				FF81FF231A6A37890012A969 /* AVFoundation.framework */,
 				192F41891A6A2B2700606DC8 /* libsqlite3.dylib */,
 				192F41871A6A2B1E00606DC8 /* libz.dylib */,
 				192F41851A6A2B1500606DC8 /* SystemConfiguration.framework */,
@@ -222,6 +237,18 @@
 			name = BrowseView;
 			sourceTree = "<group>";
 		};
+		FF81FF251A6A399D0012A969 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */,
+				FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */,
+				FF81FF281A6A399D0012A969 /* OpenEars.framework */,
+				FF81FF291A6A399D0012A969 /* Slt.framework */,
+			);
+			name = Framework;
+			path = OpenEarsDistribution/Framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +333,8 @@
 				192F41421A6A011400606DC8 /* Main.storyboard in Resources */,
 				192F41471A6A011400606DC8 /* LaunchScreen.xib in Resources */,
 				192F41441A6A011400606DC8 /* Images.xcassets in Resources */,
+				FF81FF2B1A6A399D0012A969 /* AcousticModelSpanish.bundle in Resources */,
+				FF81FF2A1A6A399D0012A969 /* AcousticModelEnglish.bundle in Resources */,
 				192F41671A6A274200606DC8 /* gradient.png in Resources */,
 				192F41611A6A0C2700606DC8 /* sample.jpg in Resources */,
 			);
@@ -458,6 +487,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OpenEarsDistribution/Framework",
 				);
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
@@ -474,6 +504,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OpenEarsDistribution/Framework",
 				);
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
