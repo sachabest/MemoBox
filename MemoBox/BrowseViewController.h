@@ -11,10 +11,12 @@
 #import "ParseManager.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import "ContactViewController.h"
 
 @interface BrowseViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
     NSMutableDictionary *contacts;
     float cellDimension;
+    PFObject *selectedContact;
 }
 
 - (IBAction)checkAddressBookAccess:(id)sender;

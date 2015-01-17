@@ -37,6 +37,8 @@
 		192F418D1A6A382A00606DC8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418C1A6A382A00606DC8 /* Social.framework */; };
 		192F418F1A6A383300606DC8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418E1A6A383300606DC8 /* Accounts.framework */; };
 		19C595C11A6AEF3900FD6FE6 /* MemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */; };
+		19C595C51A6B03B300FD6FE6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C41A6B03B300FD6FE6 /* ContactViewController.m */; };
+		19C595C71A6B0CF800FD6FE6 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C595C61A6B0CF800FD6FE6 /* avatar.png */; };
 		FF81FF241A6A37890012A969 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF231A6A37890012A969 /* AVFoundation.framework */; };
 		FF81FF2A1A6A399D0012A969 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */; };
 		FF81FF2B1A6A399D0012A969 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */; };
@@ -95,6 +97,9 @@
 		192F418E1A6A383300606DC8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		19C595BF1A6AEF3900FD6FE6 /* MemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoTableViewController.h; sourceTree = "<group>"; };
 		19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoTableViewController.m; sourceTree = "<group>"; };
+		19C595C31A6B03B300FD6FE6 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		19C595C41A6B03B300FD6FE6 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		19C595C61A6B0CF800FD6FE6 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		FF81FF231A6A37890012A969 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
@@ -163,6 +168,7 @@
 		192F41351A6A011400606DC8 /* MemoBox */ = {
 			isa = PBXGroup;
 			children = (
+				19C595C21A6B03A500FD6FE6 /* ContactView */,
 				19C595BE1A6AEF2800FD6FE6 /* MemoView */,
 				192F41681A6A29FC00606DC8 /* ParseManager.h */,
 				192F41691A6A29FC00606DC8 /* ParseManager.m */,
@@ -208,6 +214,7 @@
 		192F415F1A6A0C1F00606DC8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				19C595C61A6B0CF800FD6FE6 /* avatar.png */,
 				192F41661A6A274200606DC8 /* gradient.png */,
 				192F41601A6A0C2700606DC8 /* sample.jpg */,
 			);
@@ -232,6 +239,15 @@
 				19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */,
 			);
 			name = MemoView;
+			sourceTree = "<group>";
+		};
+		19C595C21A6B03A500FD6FE6 /* ContactView */ = {
+			isa = PBXGroup;
+			children = (
+				19C595C31A6B03B300FD6FE6 /* ContactViewController.h */,
+				19C595C41A6B03B300FD6FE6 /* ContactViewController.m */,
+			);
+			name = ContactView;
 			sourceTree = "<group>";
 		};
 		FF81FF251A6A399D0012A969 /* Framework */ = {
@@ -350,6 +366,7 @@
 				192F41471A6A011400606DC8 /* LaunchScreen.xib in Resources */,
 				192F41441A6A011400606DC8 /* Images.xcassets in Resources */,
 				FF81FF2B1A6A399D0012A969 /* AcousticModelSpanish.bundle in Resources */,
+				19C595C71A6B0CF800FD6FE6 /* avatar.png in Resources */,
 				FF81FF2A1A6A399D0012A969 /* AcousticModelEnglish.bundle in Resources */,
 				192F41671A6A274200606DC8 /* gradient.png in Resources */,
 				192F41611A6A0C2700606DC8 /* sample.jpg in Resources */,
@@ -370,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C595C51A6B03B300FD6FE6 /* ContactViewController.m in Sources */,
 				19C595C11A6AEF3900FD6FE6 /* MemoTableViewController.m in Sources */,
 				192F413C1A6A011400606DC8 /* AppDelegate.m in Sources */,
 				192F41651A6A0C6C00606DC8 /* BrowseCollectionViewCell.m in Sources */,

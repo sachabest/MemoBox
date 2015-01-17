@@ -35,8 +35,13 @@ static NSArray *contactData;
 + (PFObject *)addContact:(NSString *)name withNum:(NSString *)number {
     PFObject *new = [PFObject objectWithClassName:@"Contact"];
     new[@"name"] = name;
-    new[@"number"] = number;
-    [new saveInBackground];
+    new[@"phone"] = number;
+    [new saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [[PFUser currentUser] addObject:new forKey:@"contacts"];
+            [[PFUser currentUser] saveInBackground];
+        }
+    }];
     // does not handle duplicates
     return new;
 }
@@ -61,6 +66,13 @@ static NSArray *contactData;
 }
 
 + (void)loadAllContacts {
+    [[PFUser currentUser] fetchIfNeeded];
+    contactData = [PFUser currentUser][@"contacts"];
+    // this is a heavy operation
+    for (PFObject *contact in contactData) {
+        [contact fetchIfNeeded];
+    }
+    /** not necessary
     if ([ParseManager numContacts] == 0) {
         return;
     }
@@ -73,7 +85,7 @@ static NSArray *contactData;
         for (PFObject *contact in contactData) {
             [contact fetchIfNeeded];
         }
-    }
+    } **/
 }
 + (NSArray *)contactData {
     return contactData;

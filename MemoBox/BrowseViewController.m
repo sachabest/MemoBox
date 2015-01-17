@@ -80,15 +80,12 @@ static NSString * const reuseIdentifier = @"Contact";
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    [ParseManager loadAllContacts];
+    [self.collectionView reloadData];
 }
 
 // Sent to the delegate when the log in attempt fails.
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
-    [[[UIAlertView alloc] initWithTitle:@"Login Failed"
-                                message:@"Could not log you in at this time. Please try again later."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
 }
 // Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
@@ -207,6 +204,14 @@ static ABAddressBookRef addressBook;
 
 }
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
+    NSString *name = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, property);
+    NSString *phone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phoneNumbers, identifier);
+    phone = [[phone componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+    selectedContact = [ParseManager addContact:name withNum:phone];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"show" sender:self];
+    }];
     // call twillo api here...
 }
 
@@ -259,7 +264,11 @@ static ABAddressBookRef addressBook;
         cell = [[BrowseCollectionViewCell alloc] init];
     }
     PFObject *contact = [ParseManager contactData][indexPath.row];
-    cell.picture.file = contact[@"photo"];
+    if (contact[@"photo"]) {
+        cell.picture.file = contact[@"photo"];
+    } else {
+        cell.picture.image = [UIImage imageNamed:@"avatar"];
+    }
     cell.name.text = contact[@"name"];
     [cell.picture loadInBackground];
     // Configure the cell
@@ -298,4 +307,9 @@ static ABAddressBookRef addressBook;
 }
 */
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"show"]) {
+        [(ContactViewController *)segue.destinationViewController setContact:selectedContact];
+    }
+}
 @end
