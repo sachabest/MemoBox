@@ -26,6 +26,7 @@ static NSString * const reuseIdentifier = @"Contact";
     //[self.collectionView registerClass:[BrowseCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     cellDimension = ([[UIScreen mainScreen] bounds].size.width - 0 /* padding */ ) / 2.0;
     [ParseManager loadAllContacts];
+    self.collectionView.allowsSelection = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -306,10 +307,20 @@ static ABAddressBookRef addressBook;
 	
 }
 */
-
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < [ParseManager numContacts]) {
+        return YES;
+    }
+    return NO;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+        selectedContact = [ParseManager contactData][indexPath.row];
+        [self performSegueWithIdentifier:@"show" sender:self];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"show"]) {
-        [(ContactViewController *)segue.destinationViewController setContact:selectedContact];
+        UINavigationController *nav = segue.destinationViewController;
+        [((ContactViewController *)nav.topViewController) setContact:selectedContact];
     }
 }
 @end

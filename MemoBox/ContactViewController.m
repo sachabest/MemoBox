@@ -31,10 +31,13 @@
     
 }
 - (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)writeMemo:(id)sender {
+    [self performSegueWithIdentifier:@"write" sender:self];
 }
 - (IBAction)viewMemos:(id)sender {
+    [self performSegueWithIdentifier:@"view" sender:self];
 }
 
 /*
