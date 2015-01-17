@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <ParseUI/ParseUI.h>
 
-@interface ParseManager : NSObject <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface ParseManager : NSObject
 
 + (BOOL)isLoggedIn;
 + (void)showLoginUI:(UIViewController *)sender;
