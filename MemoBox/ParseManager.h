@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define kUserPhone @"username'
+#define kUserName @"additional"
+
 @interface ParseManager : NSObject
 
 + (BOOL)isLoggedIn;

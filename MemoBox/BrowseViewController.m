@@ -56,8 +56,12 @@ static NSString * const reuseIdentifier = @"Contact";
 - (void)showLoginUI:(UIViewController *)sender {
     PFLogInViewController *login = [[PFLogInViewController alloc] init];
     PFSignUpViewController *signup = [[PFSignUpViewController alloc] init];
+    signup.fields = PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsAdditional | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton;
     login.delegate = self;
     signup.delegate = self;
+    signup.signUpView.usernameField.placeholder = @"Phone";
+    signup.signUpView.additionalField.placeholder = @"Name";
+    login.logInView.usernameField.placeholder = @"Phone";
     [login setSignUpController:signup];
     [sender presentViewController:login animated:YES completion:nil];
     // show Parse login UI here
@@ -122,6 +126,7 @@ static NSString * const reuseIdentifier = @"Contact";
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
+        
         [ParseManager createInstallation];
     }]; // Dismiss the PFSignUpViewController
 }
