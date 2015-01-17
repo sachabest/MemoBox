@@ -14,6 +14,7 @@
     NSMutableDictionary *contacts;
 }
 
+- (void)showLoginUI:(UIViewController *)sender;
 
 @end
 

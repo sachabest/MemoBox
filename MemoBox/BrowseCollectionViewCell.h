@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
 
 @interface BrowseCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *picture;
+@property (weak, nonatomic) IBOutlet PFImageView *picture;
 @property (weak, nonatomic) IBOutlet UIImageView *gradient;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 
