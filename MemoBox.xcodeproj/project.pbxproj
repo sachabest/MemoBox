@@ -35,6 +35,8 @@
 		192F41861A6A2B1500606DC8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41851A6A2B1500606DC8 /* SystemConfiguration.framework */; };
 		192F41881A6A2B1E00606DC8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41871A6A2B1E00606DC8 /* libz.dylib */; };
 		192F418A1A6A2B2700606DC8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41891A6A2B2700606DC8 /* libsqlite3.dylib */; };
+		192F418D1A6A382A00606DC8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418C1A6A382A00606DC8 /* Social.framework */; };
+		192F418F1A6A383300606DC8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418E1A6A383300606DC8 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		192F41871A6A2B1E00606DC8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		192F41891A6A2B2700606DC8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		192F418B1A6A356200606DC8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		192F418C1A6A382A00606DC8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		192F418E1A6A383300606DC8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192F418F1A6A383300606DC8 /* Accounts.framework in Frameworks */,
+				192F418D1A6A382A00606DC8 /* Social.framework in Frameworks */,
 				192F418A1A6A2B2700606DC8 /* libsqlite3.dylib in Frameworks */,
 				192F41881A6A2B1E00606DC8 /* libz.dylib in Frameworks */,
 				192F41861A6A2B1500606DC8 /* SystemConfiguration.framework in Frameworks */,
@@ -125,6 +131,8 @@
 		192F412A1A6A011400606DC8 = {
 			isa = PBXGroup;
 			children = (
+				192F418E1A6A383300606DC8 /* Accounts.framework */,
+				192F418C1A6A382A00606DC8 /* Social.framework */,
 				192F41891A6A2B2700606DC8 /* libsqlite3.dylib */,
 				192F41871A6A2B1E00606DC8 /* libz.dylib */,
 				192F41851A6A2B1500606DC8 /* SystemConfiguration.framework */,
@@ -159,6 +167,8 @@
 		192F41351A6A011400606DC8 /* MemoBox */ = {
 			isa = PBXGroup;
 			children = (
+				192F41681A6A29FC00606DC8 /* ParseManager.h */,
+				192F41691A6A29FC00606DC8 /* ParseManager.m */,
 				192F41621A6A0C4A00606DC8 /* BrowseView */,
 				192F415F1A6A0C1F00606DC8 /* Assets */,
 				192F413A1A6A011400606DC8 /* AppDelegate.h */,
@@ -205,8 +215,6 @@
 			children = (
 				192F41661A6A274200606DC8 /* gradient.png */,
 				192F41601A6A0C2700606DC8 /* sample.jpg */,
-				192F41681A6A29FC00606DC8 /* ParseManager.h */,
-				192F41691A6A29FC00606DC8 /* ParseManager.m */,
 			);
 			name = Assets;
 			sourceTree = "<group>";

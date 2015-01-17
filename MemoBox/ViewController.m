@@ -19,8 +19,9 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (![ParseManager isLoggedIn]) {
-        [ParseManager showLoginUI];
+        [ParseManager showLoginUI:self];
     }
 }
 - (void)didReceiveMemoryWarning {
