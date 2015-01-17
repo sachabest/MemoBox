@@ -128,7 +128,6 @@ static NSString * const reuseIdentifier = @"Contact";
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
-        
         [ParseManager createInstallation];
     }]; // Dismiss the PFSignUpViewController
 }
@@ -215,7 +214,7 @@ static ABAddressBookRef addressBook;
     NSString *name = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, property);
     NSString *phone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phoneNumbers, identifier);
-    phone = [[phone componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+    phone = [ParseManager filterPhone:phone];
     selectedContact = [ParseManager addContact:name withNum:phone];
     [self dismissViewControllerAnimated:YES completion:^{
         [self performSegueWithIdentifier:@"show" sender:self];

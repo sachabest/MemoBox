@@ -14,6 +14,23 @@
 
 @implementation MemoTableViewController
 
+static float textFieldWidth = 309.0f;
+static NSDateFormatter *format;
+
+- (id)initWithCoder:(NSCoder *)aCoder {
+    self = [super initWithCoder:aCoder];
+    if (self) {
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = YES;
+    }
+    return self;
+}
+- (PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:@"Memo"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    [query whereKey:@"contact" equalTo:_contact];
+    return query;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -22,6 +39,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    format = [[NSDateFormatter alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,29 +47,40 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
+    UITextView *calculationView = [[UITextView alloc] init];
+    [calculationView setAttributedText:text];
+    CGSize size = [calculationView sizeThatFits:CGSizeMake(width, FLT_MAX)];
+    return size.height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // check here, if it is one of the cells, that needs to be resized
+    // to the size of the contained UITextView
+    NSString *text = super.objects[indexPath.row][@"text"];
+    return [self textViewHeightForAttributedText:text andWidth:textFieldWidth] + 75;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+- (PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
+    static NSString *CellIdentifier = @"Cell";
+    MemoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.textView.text = object[@"text"];
+    // support for photos soon
+    NSDate *forView = object[@"createdAt"];
+    [format setDateFormat:@"MMM"];
+    NSString *month = [format stringFromDate:forView];
+    [format setDateFormat:@"dd"];
+    NSString *day = [format stringFromDate:forView];
+    cell.monthLabel.text = month;
+    cell.dayLabel.text = day;
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemoTableViewController.h"
 
-@interface ContactViewController : UIViewController
+@interface ContactViewController : UIViewController {
+    NSArray *memos;
+}
 
 @property (weak, nonatomic) IBOutlet PFImageView *photo;
 @property (weak, nonatomic) IBOutlet UILabel *name;
