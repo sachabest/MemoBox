@@ -27,6 +27,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)requestMemo:(id)sender {
+    
+}
+- (IBAction)back:(id)sender {
+}
+- (IBAction)writeMemo:(id)sender {
+}
+- (IBAction)viewMemos:(id)sender {
+}
 
 /*
 #pragma mark - Navigation
