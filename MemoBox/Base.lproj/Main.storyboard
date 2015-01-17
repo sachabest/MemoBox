@@ -1,25 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUW-BN-3XR">
+                                <rect key="frame" x="149" y="506" width="66" height="30"/>
+                                <state key="normal" title="BROWSE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Mc3-uI-SeV" kind="show" id="Rj7-9f-Y5x"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="396.5" y="316.5"/>
+        </scene>
+        <!--Browse View Controller-->
+        <scene sceneID="HY6-Ge-Wpd">
+            <objects>
+                <collectionViewController id="Mc3-uI-SeV" customClass="BrowseViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NcF-gT-VhX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mQZ-jb-iYp">
+                            <size key="itemSize" width="160" height="160"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N5f-Nv-pEQ" customClass="BrowseCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="08F-BQ-wkB">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="kf6-k0-fZy">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SACHA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lji-jI-0ev">
+                                            <rect key="frame" x="8" y="120" width="144" height="31.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="08F-BQ-wkB" firstAttribute="leading" secondItem="N5f-Nv-pEQ" secondAttribute="leadingMargin" constant="-8" id="0cu-gQ-c6o"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="08F-BQ-wkB" secondAttribute="trailing" constant="-8" id="2x0-5C-N3v"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="kf6-k0-fZy" secondAttribute="trailing" constant="-8" id="4uw-Ov-loC"/>
+                                    <constraint firstItem="lji-jI-0ev" firstAttribute="leading" secondItem="N5f-Nv-pEQ" secondAttribute="leadingMargin" id="GVn-2m-yxg"/>
+                                    <constraint firstItem="kf6-k0-fZy" firstAttribute="top" secondItem="N5f-Nv-pEQ" secondAttribute="topMargin" constant="-8" id="Q7z-1o-1yQ"/>
+                                    <constraint firstItem="lji-jI-0ev" firstAttribute="bottom" secondItem="N5f-Nv-pEQ" secondAttribute="bottomMargin" id="TTl-Uq-Gbl"/>
+                                    <constraint firstItem="08F-BQ-wkB" firstAttribute="top" secondItem="N5f-Nv-pEQ" secondAttribute="topMargin" constant="-8" id="c9X-rs-3xJ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="lji-jI-0ev" secondAttribute="trailing" id="jZX-lX-zeb"/>
+                                    <constraint firstItem="kf6-k0-fZy" firstAttribute="leading" secondItem="N5f-Nv-pEQ" secondAttribute="leadingMargin" constant="-8" id="vQm-C4-jd8"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="kf6-k0-fZy" secondAttribute="bottom" constant="-8" id="x2f-w7-ltw"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="08F-BQ-wkB" secondAttribute="bottom" constant="-8" id="yQJ-Ws-gKB"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="gradient" destination="kf6-k0-fZy" id="LW7-Vp-hdr"/>
+                                    <outlet property="name" destination="lji-jI-0ev" id="48B-WW-UIw"/>
+                                    <outlet property="picture" destination="08F-BQ-wkB" id="EFQ-tg-YKj"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Mc3-uI-SeV" id="f7c-AI-8vn"/>
+                            <outlet property="delegate" destination="Mc3-uI-SeV" id="rZk-wN-OiJ"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lQp-Ka-aQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828.5" y="316.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gradient" width="1000" height="240"/>
+        <image name="sample" width="320" height="320"/>
+    </resources>
 </document>
