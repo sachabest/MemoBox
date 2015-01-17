@@ -13,7 +13,13 @@
 + (BOOL)isLoggedIn {
     return [PFUser currentUser] != nil;
 }
-+ (void)showLoginUI {
++ (void)showLoginUI:(UIViewController *)sender {
+    PFLogInViewController *login = [[PFLogInViewController alloc] init];
+    PFSignUpViewController *signup = [[PFSignUpViewController alloc] init];
+    login.delegate = self;
+    signup.delegate = self;
+    [login setSignUpController:signup];
+    [sender presentViewController:login animated:YES completion:nil];
     // show Parse login UI here
 }
 + (int)numContacts {

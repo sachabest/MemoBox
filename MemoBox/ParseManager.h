@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ParseUI/ParseUI.h>
 
-@interface ParseManager : NSObject
+@interface ParseManager : NSObject <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 + (BOOL)isLoggedIn;
-+ (void)showLoginUI;
++ (void)showLoginUI:(UIViewController *)sender;
 + (int)numContacts;
 + (NSArray *)contacts;
 + (NSArray *)memosForContact:(PFObject *)contact;
