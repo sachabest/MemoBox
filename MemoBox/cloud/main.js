@@ -49,5 +49,24 @@ app.post('/receive',
         });
     }
 );
-  
+
 app.listen();
+
+// Create the Cloud Function
+Parse.Cloud.define("requestMemo", function(request, response) {
+    console.log("requesting memo!!!!!!");
+    client.sendSms({
+        to: request.params.receiverNumber,
+        from: '+14157636299',
+        body: 'Testinggg #' + request.params.userNumber
+    },
+    function(err, responseData) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(responseData.from);
+            console.log(responseData.body);
+        }
+    }
+    );
+});
