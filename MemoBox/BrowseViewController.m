@@ -14,7 +14,7 @@
 
 @implementation BrowseViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"Contact";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,8 +23,9 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+    //[self.collectionView registerClass:[BrowseCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    cellDimension = ([[UIScreen mainScreen] bounds].size.width - 0 /* padding */ ) / 2.0;
+    [ParseManager loadAllContacts];
     // Do any additional setup after loading the view.
 }
 
@@ -42,6 +43,11 @@ static NSString * const reuseIdentifier = @"Cell";
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(cellDimension, cellDimension);
+}
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -51,13 +57,22 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+    return [ParseManager numContacts] + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row >= [ParseManager numContacts]) {
+        // i.e. plus button
+        return [collectionView dequeueReusableCellWithReuseIdentifier:@"Add" forIndexPath:indexPath];
+    }
     BrowseCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
+    if (!cell) {
+        cell = [[BrowseCollectionViewCell alloc] init];
+    }
+    PFObject *contact = [ParseManager contactData][indexPath.row];
+    cell.picture.file = contact[@"photo"];
+    cell.name.text = contact[@"name"];
+    [cell.picture loadInBackground];
     // Configure the cell
     
     return cell;

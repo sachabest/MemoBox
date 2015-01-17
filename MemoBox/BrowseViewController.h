@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BrowseCollectionViewCell.h"
+#import "ParseManager.h"
 
-@interface BrowseViewController : UICollectionViewController
+@interface BrowseViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout> {
+    float cellDimension;
+}
 
 
 @end

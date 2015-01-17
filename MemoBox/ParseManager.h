@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ParseUI/ParseUI.h>
 
 @interface ParseManager : NSObject
 
 + (BOOL)isLoggedIn;
-+ (void)showLoginUI:(UIViewController *)sender;
 + (int)numContacts;
 + (NSArray *)contacts;
 + (NSArray *)memosForContact:(PFObject *)contact;
 + (PFObject *)addContact:(NSString *)name withNum:(NSString *)number;
 + (PFObject *)addMemo:(PFObject *)contact withText:(NSString *)text image:(UIImage *)image;
++ (void)createInstallation;
++ (PFObject *)getContact:(NSString *)objectId;
++ (void)loadAllContacts;
++ (NSArray *)contactData;
 
 @end

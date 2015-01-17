@@ -101,7 +101,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
-        // nothing here
+        [ParseManager createInstallation];
     }]; // Dismiss the PFSignUpViewController
 }
 
@@ -116,7 +116,7 @@
 // Sent to the delegate when the sign up screen is dismissed.
 - (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
     [self dismissViewControllerAnimated:YES completion:^{
-        // nothing here
+        [ParseManager createInstallation];
     }]; // Dismiss the PFSignUpViewController
 }
 

@@ -17,7 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"uSZqI4Zyqrff0B6RQNCSwIP86aF8eOU4HyjLeZxy" clientKey:@"j1BX7X9za87vu2oJIu8eyFRGd6gdPGd330DC3fgd"]; 
+    [Parse setApplicationId:@"uSZqI4Zyqrff0B6RQNCSwIP86aF8eOU4HyjLeZxy" clientKey:@"j1BX7X9za87vu2oJIu8eyFRGd6gdPGd330DC3fgd"];
+    // fix for storybaord image view
+    [PFImageView class];
     return YES;
 }
 

@@ -10,14 +10,18 @@
 
 @implementation ParseManager
 
+static NSArray *contactData;
+
 + (BOOL)isLoggedIn {
     return [PFUser currentUser] != nil;
 }
 
 + (int)numContacts {
+    PFUser *user = [PFUser currentUser];
     return (int) [[PFUser currentUser][@"contacts"] count];
 }
 + (NSArray *)contacts {
+    [[PFUser currentUser] fetchIfNeeded];
     return [PFUser currentUser][@"contacts"];
 }
 + (NSArray *)memosForContact:(PFObject *)contact {
@@ -48,6 +52,31 @@
         return new;
     }
     return nil;
+}
+// Note this method will cause a crash if the objectId is invalid
++ (PFObject *)getContact:(NSString *)objectId {
+    PFQuery *query = [PFQuery queryWithClassName:@"Contact"];
+    [query whereKey:@"objectId" equalTo:objectId];
+    return [query findObjects][0];
+}
+
++ (void)loadAllContacts {
+    if ([ParseManager numContacts] == 0) {
+        return;
+    }
+    if (!contactData) {
+        PFQuery *all = [PFQuery queryWithClassName:@"Contact"];
+        [all whereKey:@"objectId" containedIn:[ParseManager contacts]];
+        contactData = [all findObjects];
+    }
+    else {
+        for (PFObject *contact in contactData) {
+            [contact fetchIfNeeded];
+        }
+    }
+}
++ (NSArray *)contactData {
+    return contactData;
 }
 
 + (void)createInstallation {
