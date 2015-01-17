@@ -26,6 +26,7 @@ static NSString * const reuseIdentifier = @"Contact";
     //[self.collectionView registerClass:[BrowseCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     cellDimension = ([[UIScreen mainScreen] bounds].size.width - 0 /* padding */ ) / 2.0;
     [ParseManager loadAllContacts];
+    self.collectionView.allowsSelection = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -55,8 +56,14 @@ static NSString * const reuseIdentifier = @"Contact";
 - (void)showLoginUI:(UIViewController *)sender {
     PFLogInViewController *login = [[PFLogInViewController alloc] init];
     PFSignUpViewController *signup = [[PFSignUpViewController alloc] init];
+    signup.fields = PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsAdditional | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton;
     login.delegate = self;
     signup.delegate = self;
+    signup.signUpView.usernameField.keyboardType = UIKeyboardTypePhonePad;
+    login.logInView.usernameField.keyboardType = UIKeyboardTypePhonePad;
+    signup.signUpView.usernameField.placeholder = @"Phone";
+    signup.signUpView.additionalField.placeholder = @"Name";
+    login.logInView.usernameField.placeholder = @"Phone";
     [login setSignUpController:signup];
     [sender presentViewController:login animated:YES completion:nil];
     // show Parse login UI here
@@ -121,6 +128,7 @@ static NSString * const reuseIdentifier = @"Contact";
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
+        
         [ParseManager createInstallation];
     }]; // Dismiss the PFSignUpViewController
 }
@@ -306,10 +314,20 @@ static ABAddressBookRef addressBook;
 	
 }
 */
-
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < [ParseManager numContacts]) {
+        return YES;
+    }
+    return NO;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+        selectedContact = [ParseManager contactData][indexPath.row];
+        [self performSegueWithIdentifier:@"show" sender:self];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"show"]) {
-        [(ContactViewController *)segue.destinationViewController setContact:selectedContact];
+        UINavigationController *nav = segue.destinationViewController;
+        [((ContactViewController *)nav.topViewController) setContact:selectedContact];
     }
 }
 @end

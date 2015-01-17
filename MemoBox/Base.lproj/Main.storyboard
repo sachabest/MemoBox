@@ -116,12 +116,29 @@
                     <navigationItem key="navigationItem" id="Pe0-Ok-iqK"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="dfd-1h-3yo" kind="showDetail" identifier="show" id="pTe-Sb-pAg"/>
+                        <segue destination="VSS-Zp-DEK" kind="showDetail" identifier="show" id="DjI-gf-Yud"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQp-Ka-aQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="828.5" y="316.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3YY-G0-Qnz">
+            <objects>
+                <navigationController id="VSS-Zp-DEK" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aei-6L-84j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dfd-1h-3yo" kind="relationship" relationship="rootViewController" id="erf-hl-4g9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9O-rM-mw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231.5" y="316.5"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="0qm-XZ-JdQ">
@@ -135,20 +152,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Kj0-Zp-DVI" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Kj0-Zp-DVI" customClass="PFImageView">
                                 <rect key="frame" x="112" y="87" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="0Ip-3e-Ma4"/>
                                     <constraint firstAttribute="width" constant="150" id="0LW-3Y-BQW"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sacha Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkz-O6-48f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sacha Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkz-O6-48f">
                                 <rect key="frame" x="16" y="255" width="343" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK5-84-rvY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK5-84-rvY">
                                 <rect key="frame" x="16" y="302" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -212,16 +229,38 @@
                             <constraint firstAttribute="centerX" secondItem="qkz-O6-48f" secondAttribute="centerX" id="zDs-J8-1Fr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jLB-6Z-5pf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="name" destination="qkz-O6-48f" id="vRK-rV-tQa"/>
                         <outlet property="phone" destination="LK5-84-rvY" id="uTA-wt-Uhk"/>
                         <outlet property="photo" destination="Kj0-Zp-DVI" id="6nu-i3-qyg"/>
+                        <segue destination="pis-HP-ZoY" kind="show" identifier="view" id="6jo-7f-4jh"/>
+                        <segue destination="WpS-g3-fj8" kind="show" identifier="write" id="BQF-jS-X20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hrm-cb-rjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248.5" y="316.5"/>
+            <point key="canvasLocation" x="1632.5" y="316.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e1e-X9-qZX">
+            <objects>
+                <viewController id="WpS-g3-fj8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QkP-d3-Rgv"/>
+                        <viewControllerLayoutGuide type="bottom" id="dRQ-iY-NMH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TSB-nw-irZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAt-wc-YAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040.5" y="780.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="RyM-yq-YCr">
@@ -248,7 +287,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3K8-k1-RXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727.5" y="316.5"/>
+            <point key="canvasLocation" x="2040.5" y="47.5"/>
         </scene>
     </scenes>
     <resources>

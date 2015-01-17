@@ -27,14 +27,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)requestMemo:(id)sender {
-    
+    [PFCloud callFunctionInBackground:@"requestMemo"
+                       withParameters:@{ @"receiverNumber" : _phone.text,
+                                         @"userNumber" : [PFUser currentUser][@"username"]}
+                                block:^(id object, NSError *error) {
+                                    [[[UIAlertView alloc] initWithTitle:@"Request Sent!"
+                                                                message:@"Your memo request has been sent!"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil, nil] show];
+                                }];
 }
+
 - (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)writeMemo:(id)sender {
+    [self performSegueWithIdentifier:@"write" sender:self];
 }
 - (IBAction)viewMemos:(id)sender {
+    [self performSegueWithIdentifier:@"view" sender:self];
 }
 
 /*
