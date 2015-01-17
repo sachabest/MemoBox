@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "BrowseCollectionViewCell.h"
 #import "ParseManager.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface BrowseViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout> {
+@interface BrowseViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
+    NSMutableDictionary *contacts;
     float cellDimension;
 }
 
+- (IBAction)checkAddressBookAccess:(id)sender;
 
 @end
