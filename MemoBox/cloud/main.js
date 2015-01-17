@@ -11,17 +11,18 @@ app.post('/receive',
         console.log(req.body.Body);
         var array = req.body.Body.split('#')[0];
         var message = array[0];
-        var receiver = array[1];
-        var sender = req.body.From;
+        var user = array[1];
+        var contact = req.body.From;
 
         var User = Parse.Object.extend("User");
         var Contact = Parse.Object.extend("Contact");
         var queryForUser = new Parse.Query(User);
         var queryForContact = new Parse.Query(Contact);
-
-        queryForUser.get(receiver, {
+        queryForUser.equalTo("username", user);
+        queryForContact.equalTo("number", contact);
+        queryForUser.find(receiver, {
             success: function(user) {
-                queryForContact.get(sender, {
+                queryForContact.find({
                     success: function(contact) {
                         var Memo = Parse.Object.extend("Memo");
                         var memo = new Memo();
