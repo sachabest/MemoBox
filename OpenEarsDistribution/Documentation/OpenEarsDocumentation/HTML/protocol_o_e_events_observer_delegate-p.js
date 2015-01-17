@@ -1,0 +1,25 @@
+var protocol_o_e_events_observer_delegate_p =
+[
+    [ "audioSessionInterruptionDidBegin", "protocol_o_e_events_observer_delegate-p.html#a31b6a01994e04e1b2165684d8fb870d0", null ],
+    [ "audioSessionInterruptionDidEnd", "protocol_o_e_events_observer_delegate-p.html#ae14d03db3ac1fe4e5385b0695861ab86", null ],
+    [ "audioInputDidBecomeUnavailable", "protocol_o_e_events_observer_delegate-p.html#a642e472a03062ac176d34eb2109859af", null ],
+    [ "audioInputDidBecomeAvailable", "protocol_o_e_events_observer_delegate-p.html#a28cc321b8b990588d12abd8c626f4e08", null ],
+    [ "audioRouteDidChangeToRoute:", "protocol_o_e_events_observer_delegate-p.html#aa62a8eeaad4a1f6be6b4943a66b3d3e7", null ],
+    [ "pocketsphinxRecognitionLoopDidStart", "protocol_o_e_events_observer_delegate-p.html#a5451da845492799e9455ce8d94b1310b", null ],
+    [ "pocketsphinxDidStartListening", "protocol_o_e_events_observer_delegate-p.html#a587ad5a294910c7d872770857a67ca99", null ],
+    [ "pocketsphinxDidDetectSpeech", "protocol_o_e_events_observer_delegate-p.html#a7d3b4fc555284fffd02ff35f744f82ea", null ],
+    [ "pocketsphinxDidDetectFinishedSpeech", "protocol_o_e_events_observer_delegate-p.html#a481a785a221e4e470eb9505e2793bb8f", null ],
+    [ "pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID:", "protocol_o_e_events_observer_delegate-p.html#a02050b6ae45aea737191123aba237f7b", null ],
+    [ "pocketsphinxDidReceiveNBestHypothesisArray:", "protocol_o_e_events_observer_delegate-p.html#a5aa0880cada30caf57766fff3d667c29", null ],
+    [ "pocketsphinxDidStopListening", "protocol_o_e_events_observer_delegate-p.html#af4b094951794165ee5b1ecce741e0f39", null ],
+    [ "pocketsphinxDidSuspendRecognition", "protocol_o_e_events_observer_delegate-p.html#ac705dfc1b147c5188dace4c613d1b37b", null ],
+    [ "pocketsphinxDidResumeRecognition", "protocol_o_e_events_observer_delegate-p.html#a7435618a99aa987658b9d1d9c872f62b", null ],
+    [ "pocketsphinxDidChangeLanguageModelToFile:andDictionary:", "protocol_o_e_events_observer_delegate-p.html#a622ed8a43ea4c90a2873ffe2556ada56", null ],
+    [ "pocketSphinxContinuousSetupDidFailWithReason:", "protocol_o_e_events_observer_delegate-p.html#a21c8afc06e23935ea92cfa85d9502f43", null ],
+    [ "pocketSphinxContinuousTeardownDidFailWithReason:", "protocol_o_e_events_observer_delegate-p.html#abb54ae1ec3287b17623df4d230361e62", null ],
+    [ "pocketsphinxTestRecognitionCompleted", "protocol_o_e_events_observer_delegate-p.html#a5ccdda98a6586f5e4e2503a5061c1e65", null ],
+    [ "pocketsphinxFailedNoMicPermissions", "protocol_o_e_events_observer_delegate-p.html#aa00bdb45796f98c83617251684d1e4ec", null ],
+    [ "micPermissionCheckCompleted:", "protocol_o_e_events_observer_delegate-p.html#a02b083a3f41e2c1484f003e1a4f3e550", null ],
+    [ "fliteDidStartSpeaking", "protocol_o_e_events_observer_delegate-p.html#ad49a24546249f9b584cc6fd4df8883a5", null ],
+    [ "fliteDidFinishSpeaking", "protocol_o_e_events_observer_delegate-p.html#acc723ed134389dbef50cc757d093793f", null ]
+];

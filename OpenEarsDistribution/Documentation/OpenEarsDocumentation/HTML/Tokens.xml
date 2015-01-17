@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+  <Token>
+    <TokenIdentifier>
+      <Name>OEAcousticModel</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>OEAcousticModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_o_e_acoustic_model.html</Path>
+    <Abstract>Convenience class for accessing the acoustic model bundles. All this does is allow you to reference y...</Abstract>
+    <DeclaredIn>OEAcousticModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OEContinuousModel</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>OEContinuousModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_o_e_continuous_model.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OEEventsObserver</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>OEEventsObserver</Scope>
+    </TokenIdentifier>
+    <Path>interface_o_e_events_observer.html</Path>
+    <Abstract>OEEventsObserver provides a large set of delegate methods that allow you to receive information about...</Abstract>
+    <DeclaredIn>OEEventsObserver.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OEEventsObserverDelegate</Name>
+      <APILanguage>c</APILanguage>
+      <Type>intf</Type>
+      <Scope>OEEventsObserverDelegate</Scope>
+    </TokenIdentifier>
+    <Path>protocol_o_e_events_observer_delegate-p.html</Path>
+    <Abstract>OEEventsObserver provides a large set of delegate methods that allow you to receive information about...</Abstract>
+    <DeclaredIn>OEEventsObserver.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OEFliteController</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>OEFliteController</Scope>
+    </TokenIdentifier>
+    <Path>interface_o_e_flite_controller.html</Path>
+    <Abstract>The class that controls speech synthesis (TTS) in OpenEars.</Abstract>
+    <DeclaredIn>OEFliteController.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OELanguageModelGenerator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>OELanguageModelGenerator</Scope>
+    </TokenIdentifier>
+    <Path>interface_o_e_language_model_generator.html</Path>
+    <Abstract>The class that generates the vocabulary the OEPocketsphinxController is able to understand.</Abstract>
+    <DeclaredIn>OELanguageModelGenerator.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OELogging</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>OELogging</Scope>
+    </TokenIdentifier>
+    <Path>interface_o_e_logging.html</Path>
+    <Abstract>A singleton which turns logging on or off for the entire framework. The type of logging is related to...</Abstract>
+    <DeclaredIn>OELogging.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OEPocketsphinxController</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>OEPocketsphinxController</Scope>
+    </TokenIdentifier>
+    <Path>interface_o_e_pocketsphinx_controller.html</Path>
+    <Abstract>The class that controls local speech recognition in OpenEars.</Abstract>
+    <DeclaredIn>OEPocketsphinxController.h</DeclaredIn>
+  </Token>
+</Tokens>
