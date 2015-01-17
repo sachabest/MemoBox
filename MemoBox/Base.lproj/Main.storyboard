@@ -266,16 +266,73 @@
         <scene sceneID="RyM-yq-YCr">
             <objects>
                 <tableViewController id="pis-HP-ZoY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NoH-us-6MI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="65" sectionFooterHeight="22" id="NoH-us-6MI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VEx-oV-2Rp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="VEx-oV-2Rp" customClass="MemoTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VEx-oV-2Rp" id="Tch-3d-wxn">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyK-xj-qG6">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-xo-0Eh">
+                                                    <rect key="frame" x="8" y="6" width="33" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Iao-aI-3KI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRo-1I-ymm">
+                                                    <rect key="frame" x="10" y="23" width="30" height="25.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25.5" id="l2c-gd-aEM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="0kL-hV-pln"/>
+                                                <constraint firstAttribute="trailing" secondItem="vhs-xo-0Eh" secondAttribute="trailing" constant="9" id="JMI-G7-2UR"/>
+                                                <constraint firstItem="vhs-xo-0Eh" firstAttribute="top" secondItem="JyK-xj-qG6" secondAttribute="top" constant="6" id="KRs-JY-z23"/>
+                                                <constraint firstItem="eRo-1I-ymm" firstAttribute="leading" secondItem="JyK-xj-qG6" secondAttribute="leading" constant="10" id="KSh-oS-TEC"/>
+                                                <constraint firstAttribute="width" constant="50" id="cMV-pB-R29"/>
+                                                <constraint firstItem="vhs-xo-0Eh" firstAttribute="leading" secondItem="JyK-xj-qG6" secondAttribute="leading" constant="8" id="dKy-NC-Xfi"/>
+                                                <constraint firstAttribute="centerX" secondItem="eRo-1I-ymm" secondAttribute="centerX" id="phb-4g-Gcz"/>
+                                                <constraint firstItem="eRo-1I-ymm" firstAttribute="top" secondItem="JyK-xj-qG6" secondAttribute="top" constant="23" id="r1b-vi-WKI"/>
+                                                <constraint firstAttribute="trailing" secondItem="eRo-1I-ymm" secondAttribute="trailing" constant="10" id="yt6-rN-2de"/>
+                                            </constraints>
+                                        </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzq-Hz-DPf">
+                                            <rect key="frame" x="58" y="0.0" width="309" height="99.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <string key="text">This is a test memo. WIth tons of content about how Dhruv can't code for shit and how Hunter can't get over his SAEness and how Ali is simply annoying. THis is a small parable about PennApps and is solely meant to fill space not hurt anyone.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dzq-Hz-DPf" firstAttribute="top" secondItem="Tch-3d-wxn" secondAttribute="top" id="4JF-1t-s9W"/>
+                                        <constraint firstAttribute="bottom" secondItem="dzq-Hz-DPf" secondAttribute="bottom" id="Hjx-l0-BCt"/>
+                                        <constraint firstItem="dzq-Hz-DPf" firstAttribute="leading" secondItem="JyK-xj-qG6" secondAttribute="trailing" constant="8" id="Wck-i5-sjE"/>
+                                        <constraint firstItem="JyK-xj-qG6" firstAttribute="top" secondItem="Tch-3d-wxn" secondAttribute="top" id="lRg-E6-UEb"/>
+                                        <constraint firstItem="JyK-xj-qG6" firstAttribute="leading" secondItem="Tch-3d-wxn" secondAttribute="leading" id="vUk-as-SEy"/>
+                                        <constraint firstAttribute="trailing" secondItem="dzq-Hz-DPf" secondAttribute="trailing" constant="8" id="xOa-m2-03Q"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="eRo-1I-ymm" id="D8U-FW-T6U"/>
+                                    <outlet property="monthLabel" destination="vhs-xo-0Eh" id="uCU-Ax-Bee"/>
+                                    <outlet property="textView" destination="dzq-Hz-DPf" id="MnA-Kv-gNk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemoTableViewCell.h"
 
-@interface MemoTableViewController : UITableViewController
+@interface MemoTableViewController : PFQueryTableViewController
 
+@property PFObject *contact;
 @end
