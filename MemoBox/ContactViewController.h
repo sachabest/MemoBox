@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MemoTableViewController.h"
+#import "RequestViewController.h"
+#import "WriteViewController.h"
 
 @interface ContactViewController : UIViewController {
     NSArray *memos;
