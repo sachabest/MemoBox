@@ -55,7 +55,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"view"]) {
-        [(MemoTableViewController *)segue.destinationViewController setContact:_contact];
+        [(MemoContainerViewController *)segue.destinationViewController setContact:_contact];
     } else if ([segue.identifier isEqualToString:@"request"]) {
         [(RequestViewController *)segue.destinationViewController setName:_contact[@"name"]];
     } else if ([segue.identifier isEqualToString:@"write"]) {

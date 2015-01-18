@@ -44,6 +44,7 @@
 		19E305391A6B5B7400332B90 /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E305381A6B5B7400332B90 /* WriteViewController.m */; };
 		19E3053C1A6B5FD700332B90 /* WriteConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E3053B1A6B5FD700332B90 /* WriteConfirmViewController.m */; };
 		19E3053E1A6B673500332B90 /* CoverImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 19E3053D1A6B673500332B90 /* CoverImage.png */; };
+		19E305411A6B717F00332B90 /* MemoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E305401A6B717F00332B90 /* MemoContainerViewController.m */; };
 		FF81FF241A6A37890012A969 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF231A6A37890012A969 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,8 @@
 		19E3053A1A6B5FD700332B90 /* WriteConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteConfirmViewController.h; sourceTree = "<group>"; };
 		19E3053B1A6B5FD700332B90 /* WriteConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteConfirmViewController.m; sourceTree = "<group>"; };
 		19E3053D1A6B673500332B90 /* CoverImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoverImage.png; sourceTree = "<group>"; };
+		19E3053F1A6B717F00332B90 /* MemoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoContainerViewController.h; sourceTree = "<group>"; };
+		19E305401A6B717F00332B90 /* MemoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoContainerViewController.m; sourceTree = "<group>"; };
 		FF81FF231A6A37890012A969 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -246,6 +249,8 @@
 				19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */,
 				19C595C81A6B271700FD6FE6 /* MemoTableViewCell.h */,
 				19C595C91A6B271700FD6FE6 /* MemoTableViewCell.m */,
+				19E3053F1A6B717F00332B90 /* MemoContainerViewController.h */,
+				19E305401A6B717F00332B90 /* MemoContainerViewController.m */,
 			);
 			name = MemoView;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				19E305391A6B5B7400332B90 /* WriteViewController.m in Sources */,
 				192F416A1A6A29FC00606DC8 /* ParseManager.m in Sources */,
 				19E305361A6B5B6C00332B90 /* RequestViewController.m in Sources */,
+				19E305411A6B717F00332B90 /* MemoContainerViewController.m in Sources */,
 				192F415E1A6A0AC500606DC8 /* BrowseViewController.m in Sources */,
 				192F41391A6A011400606DC8 /* main.m in Sources */,
 				19C595CA1A6B271700FD6FE6 /* MemoTableViewCell.m in Sources */,
