@@ -10,7 +10,7 @@
 #import "WriteConfirmViewController.h"
 #import "ParseManager.h"
 
-@interface WriteViewController : UIViewController
+@interface WriteViewController : UIViewController <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *input;
 @property PFObject *contact;

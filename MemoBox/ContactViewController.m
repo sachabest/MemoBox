@@ -20,6 +20,8 @@
     _name.text = _contact[@"name"];
     _photo.file = _contact[@"photo"];
     [_photo loadInBackground];
+    _photo.layer.cornerRadius = 50;
+    _photo.clipsToBounds = YES;
     // Do any additional setup after loading the view.
 }
 

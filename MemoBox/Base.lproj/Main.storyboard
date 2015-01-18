@@ -30,7 +30,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NcF-gT-VhX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="mQZ-jb-iYp">
                             <size key="itemSize" width="160" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -51,8 +51,11 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="kf6-k0-fZy">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SACHA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lji-jI-0ev">
-                                            <rect key="frame" x="8" y="120" width="144" height="31.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SACHA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lji-jI-0ev">
+                                            <rect key="frame" x="8" y="88" width="144" height="63.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="63.5" id="rQp-FE-LS7"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -114,7 +117,19 @@
                             <outlet property="delegate" destination="Mc3-uI-SeV" id="rZk-wN-OiJ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Pe0-Ok-iqK"/>
+                    <navigationItem key="navigationItem" id="Pe0-Ok-iqK">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="Fb5-6V-7p9">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="DJ3-X9-GhB">
+                                    <rect key="frame" x="-0.5" y="0.5" width="150" height="33"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="VSS-Zp-DEK" kind="showDetail" identifier="show" id="DjI-gf-Yud"/>
@@ -162,10 +177,10 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sacha Best" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkz-O6-48f">
-                                <rect key="frame" x="139" y="102" width="150" height="100"/>
+                                <rect key="frame" x="139" y="102" width="190" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Kz4-CG-gNs"/>
-                                    <constraint firstAttribute="width" constant="150" id="foI-6p-yWh"/>
+                                    <constraint firstAttribute="width" constant="190" id="foI-6p-yWh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -287,7 +302,19 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="jLB-6Z-5pf"/>
+                    <navigationItem key="navigationItem" id="jLB-6Z-5pf">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="rIj-u3-1IR">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="yQj-yl-OKY">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="name" destination="qkz-O6-48f" id="vRK-rV-tQa"/>
@@ -369,7 +396,7 @@
                                 <rect key="frame" x="36" y="163" width="303" height="324"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -695,6 +722,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7h-g7-Wcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="xSx-Fz-BBA">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-6K-Der">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="GDT-6P-R7T">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="4UO-5u-XFI">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="2441.5" y="780.5"/>
         </scene>
@@ -702,6 +749,7 @@
     <resources>
         <image name="avatar" width="500" height="500"/>
         <image name="gradient" width="1000" height="240"/>
+        <image name="headIconNoOrange" width="693" height="759"/>
         <image name="sample" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
