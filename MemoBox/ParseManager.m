@@ -90,8 +90,15 @@ static NSArray *contactData;
 + (NSArray *)contactData {
     return contactData;
 }
-
++ (NSString *)filterPhone:(NSString *)input {
+    return [[input componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+}
 + (void)createInstallation {
+    /**
+    PFInstallation *install = [PFInstallation currentInstallation];
+    install[@"user"] = [PFUser currentUser];
+    **/
     // create PFInstallation here and push to server with column for pointer to user
 }
+
 @end

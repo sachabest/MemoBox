@@ -23,5 +23,6 @@
 + (PFObject *)getContact:(NSString *)objectId;
 + (void)loadAllContacts;
 + (NSArray *)contactData;
++ (NSString *)filterPhone:(NSString *)input;
 
 @end
