@@ -215,7 +215,12 @@ static ABAddressBookRef addressBook;
     new.predicateForEnablingPerson = [NSPredicate predicateWithFormat:@"phoneNumber.@count > 0"];
     [new setDisplayedProperties:[NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonPhoneProperty]]];
     [self presentViewController:new animated:YES completion:^{
-        //
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"How to add someone"
+                                                    message:@"Click on the person you'd like to add. Then, on the next page, click on their phone number for their mobile phone."
+                                                    delegate:nil
+                                           cancelButtonTitle:@"Got it!"
+                                           otherButtonTitles:nil];
+    [alert show];
     }];
     
 }
@@ -223,7 +228,8 @@ static ABAddressBookRef addressBook;
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
 
 }
-- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)
+person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
     NSString *name = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     name = [name stringByAppendingString:@" "];
     name = [name stringByAppendingString:(__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty)];
