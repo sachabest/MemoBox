@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [Parse setApplicationId:@"uSZqI4Zyqrff0B6RQNCSwIP86aF8eOU4HyjLeZxy" clientKey:@"j1BX7X9za87vu2oJIu8eyFRGd6gdPGd330DC3fgd"];
-    // fix for storybaord image view
+    [Crashlytics startWithAPIKey:@"e172f00c1cf65cdce5f3a032bc8c0c7c81de1368"];    // fix for storybaord image view
     [PFImageView class];
     UIUserNotificationType userNotificationTypes = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge;
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:nil];

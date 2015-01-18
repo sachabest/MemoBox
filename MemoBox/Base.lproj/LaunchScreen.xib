@@ -20,7 +20,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cover" translatesAutoresizingMaskIntoConstraints="NO" id="8XL-7W-yTl">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MemoBoxCoverOrange" translatesAutoresizingMaskIntoConstraints="NO" id="Cy9-6H-moU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="MemoBoxCoverOrange" translatesAutoresizingMaskIntoConstraints="NO" id="Cy9-6H-moU">
                     <rect key="frame" x="60" y="183" width="360" height="115"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80.459999999999994" id="5Ks-bJ-gJt"/>

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WriteConfirmViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextView *confirm;
+@property (weak, nonatomic) IBOutlet UILabel *confirm;
 @property NSString *name;
 @end

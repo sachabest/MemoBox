@@ -303,7 +303,9 @@ person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identi
         cell.picture.image = [UIImage imageNamed:@"avatar"];
     }
     cell.name.text = contact[@"name"];
-    [cell.picture loadInBackground];
+    [cell.picture loadInBackground:^(UIImage *image, NSError *error) {
+        cell.picture.contentMode = UIViewContentModeScaleAspectFill;
+    }];
     // Configure the cell
     
     return cell;

@@ -38,6 +38,7 @@
 		192F418A1A6A2B2700606DC8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41891A6A2B2700606DC8 /* libsqlite3.dylib */; };
 		192F418D1A6A382A00606DC8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418C1A6A382A00606DC8 /* Social.framework */; };
 		192F418F1A6A383300606DC8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418E1A6A383300606DC8 /* Accounts.framework */; };
+		19AE15051A6BAE7B006DB555 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AE15041A6BAE7B006DB555 /* Crashlytics.framework */; };
 		19C595C11A6AEF3900FD6FE6 /* MemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */; };
 		19C595C51A6B03B300FD6FE6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C41A6B03B300FD6FE6 /* ContactViewController.m */; };
 		19C595C71A6B0CF800FD6FE6 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C595C61A6B0CF800FD6FE6 /* avatar.png */; };
@@ -102,6 +103,7 @@
 		192F418B1A6A356200606DC8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		192F418C1A6A382A00606DC8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		192F418E1A6A383300606DC8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		19AE15041A6BAE7B006DB555 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		19C595BF1A6AEF3900FD6FE6 /* MemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoTableViewController.h; sourceTree = "<group>"; };
 		19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoTableViewController.m; sourceTree = "<group>"; };
 		19C595C31A6B03B300FD6FE6 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				192F418D1A6A382A00606DC8 /* Social.framework in Frameworks */,
 				192F418A1A6A2B2700606DC8 /* libsqlite3.dylib in Frameworks */,
 				192F41881A6A2B1E00606DC8 /* libz.dylib in Frameworks */,
+				19AE15051A6BAE7B006DB555 /* Crashlytics.framework in Frameworks */,
 				192F41861A6A2B1500606DC8 /* SystemConfiguration.framework in Frameworks */,
 				192F41841A6A2B0C00606DC8 /* StoreKit.framework in Frameworks */,
 				192F41821A6A2B0700606DC8 /* Security.framework in Frameworks */,
@@ -162,6 +165,7 @@
 		192F412A1A6A011400606DC8 = {
 			isa = PBXGroup;
 			children = (
+				19AE15041A6BAE7B006DB555 /* Crashlytics.framework */,
 				FF81FF251A6A399D0012A969 /* Framework */,
 				192F41351A6A011400606DC8 /* MemoBox */,
 				192F414F1A6A011400606DC8 /* MemoBoxTests */,
@@ -330,6 +334,7 @@
 				192F412F1A6A011400606DC8 /* Sources */,
 				192F41301A6A011400606DC8 /* Frameworks */,
 				192F41311A6A011400606DC8 /* Resources */,
+				19AE15031A6BAE6B006DB555 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -377,7 +382,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */;
+			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -422,6 +427,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19AE15031A6BAE6B006DB555 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run e172f00c1cf65cdce5f3a032bc8c0c7c81de1368 02073f2929e9e3dea7e833f5d082d1d66d2971c8ef80029cb1d08231b834e02d";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		192F412F1A6A011400606DC8 /* Sources */ = {
@@ -575,7 +597,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
-				PROVISIONING_PROFILE = "cc1d7666-64c4-4873-b75f-0d32dfac2cf0";
+				PROVISIONING_PROFILE = "773bce22-30ad-46ab-81ba-6f564d351c55";
 			};
 			name = Debug;
 		};
@@ -595,7 +617,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
-				PROVISIONING_PROFILE = "cc1d7666-64c4-4873-b75f-0d32dfac2cf0";
+				PROVISIONING_PROFILE = "773bce22-30ad-46ab-81ba-6f564d351c55";
 			};
 			name = Release;
 		};
@@ -636,7 +658,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */ = {
+		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				192F41541A6A011400606DC8 /* Debug */,
