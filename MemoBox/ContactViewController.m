@@ -31,7 +31,8 @@
 - (IBAction)requestMemo:(id)sender {
     [PFCloud callFunctionInBackground:@"requestMemo"
                        withParameters:@{ @"receiverNumber" : _phone.text,
-                                         @"userNumber" : [PFUser currentUser][@"username"]}
+                                         @"userNumber" : [PFUser currentUser][@"username"],
+                                         @"username" : [PFUser currentUser][@"additional"]}
                                 block:^(id object, NSError *error) {
                                     [[[UIAlertView alloc] initWithTitle:@"Request Sent!"
                                                                 message:@"Your memo request has been sent!"
