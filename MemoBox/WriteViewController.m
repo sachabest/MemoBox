@@ -42,6 +42,11 @@
     [ParseManager writeMemo:_input.text withContact:_contact];
     [self performSegueWithIdentifier:@"write" sender:self];
 }
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [_input becomeFirstResponder];
 }

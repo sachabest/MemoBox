@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 MemoBox. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="20.5"/>
+                    <rect key="frame" x="20" y="439" width="441" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -19,22 +20,60 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cover" translatesAutoresizingMaskIntoConstraints="NO" id="8XL-7W-yTl">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MemoBoxCoverOrange" translatesAutoresizingMaskIntoConstraints="NO" id="Cy9-6H-moU">
+                    <rect key="frame" x="60" y="183" width="360" height="115"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80.459999999999994" id="5Ks-bJ-gJt"/>
+                        <constraint firstAttribute="width" secondItem="Cy9-6H-moU" secondAttribute="height" multiplier="320:103" id="aUd-gp-OX1"/>
+                        <constraint firstAttribute="width" constant="250" id="gIk-6J-X5V"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5Ks-bJ-gJt"/>
+                            <exclude reference="gIk-6J-X5V"/>
+                        </mask>
+                    </variation>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Cy9-6H-moU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-30" id="0eE-4h-HqZ"/>
+                <constraint firstItem="Cy9-6H-moU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="2St-E1-iQj"/>
+                <constraint firstItem="Cy9-6H-moU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="120" id="I9r-lq-drh"/>
                 <constraint firstItem="8XL-7W-yTl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JHc-nC-s15"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="Cy9-6H-moU" secondAttribute="bottom" constant="104" id="JuG-X2-dOK"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
+                <constraint firstAttribute="trailing" secondItem="Cy9-6H-moU" secondAttribute="trailing" constant="10" id="MNG-2u-lp7"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstAttribute="trailing" secondItem="Cy9-6H-moU" secondAttribute="trailing" constant="60" id="Mvm-IK-5bV"/>
+                <constraint firstAttribute="centerX" secondItem="Cy9-6H-moU" secondAttribute="centerX" id="Nne-Ie-94n"/>
+                <constraint firstItem="Cy9-6H-moU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="ONx-Er-FrG"/>
+                <constraint firstAttribute="centerY" secondItem="Cy9-6H-moU" secondAttribute="centerY" id="UN7-7S-8HM"/>
+                <constraint firstAttribute="trailing" secondItem="Cy9-6H-moU" secondAttribute="trailing" constant="30" id="Ums-SP-3UP"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
                 <constraint firstAttribute="trailing" secondItem="8XL-7W-yTl" secondAttribute="trailing" id="cjI-Yp-W8x"/>
+                <constraint firstAttribute="trailing" secondItem="Cy9-6H-moU" secondAttribute="trailing" constant="-73" id="iDf-Jy-k62"/>
                 <constraint firstItem="8XL-7W-yTl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ik5-0g-Yr2"/>
+                <constraint firstItem="Cy9-6H-moU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="80" id="sSX-Qa-uXA"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cy9-6H-moU" secondAttribute="trailing" constant="80" id="siQ-4K-URC"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="8XL-7W-yTl" secondAttribute="bottom" constant="8" symbolic="YES" id="tAX-mO-gSc"/>
+                <constraint firstItem="Cy9-6H-moU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="170" id="u8e-8A-E3q"/>
                 <constraint firstAttribute="bottom" secondItem="8XL-7W-yTl" secondAttribute="bottom" id="zue-sx-krs"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="0eE-4h-HqZ"/>
+                    <exclude reference="2St-E1-iQj"/>
+                    <exclude reference="I9r-lq-drh"/>
+                    <exclude reference="MNG-2u-lp7"/>
+                    <exclude reference="Ums-SP-3UP"/>
+                    <exclude reference="iDf-Jy-k62"/>
+                    <exclude reference="sSX-Qa-uXA"/>
+                    <exclude reference="siQ-4K-URC"/>
+                    <exclude reference="u8e-8A-E3q"/>
+                    <exclude reference="JuG-X2-dOK"/>
                     <exclude reference="tAX-mO-gSc"/>
                 </mask>
             </variation>
@@ -43,5 +82,6 @@
     </objects>
     <resources>
         <image name="Cover" width="750" height="1334"/>
+        <image name="MemoBoxCoverOrange" width="626" height="103"/>
     </resources>
 </document>

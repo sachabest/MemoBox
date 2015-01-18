@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17E182B41A6B8A9700B84D1A /* headAndWordIconNoOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E182B31A6B8A9700B84D1A /* headAndWordIconNoOrange.png */; };
+		17E182B61A6B8AAC00B84D1A /* MemoBoxCoverOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E182B51A6B8AAC00B84D1A /* MemoBoxCoverOrange.png */; };
 		192F41391A6A011400606DC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 192F41381A6A011400606DC8 /* main.m */; };
 		192F413C1A6A011400606DC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 192F413B1A6A011400606DC8 /* AppDelegate.m */; };
 		192F41421A6A011400606DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 192F41401A6A011400606DC8 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17E182B31A6B8A9700B84D1A /* headAndWordIconNoOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headAndWordIconNoOrange.png; sourceTree = "<group>"; };
+		17E182B51A6B8AAC00B84D1A /* MemoBoxCoverOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MemoBoxCoverOrange.png; sourceTree = "<group>"; };
 		192F41331A6A011400606DC8 /* MemoBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		192F41371A6A011400606DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192F41381A6A011400606DC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 		192F415F1A6A0C1F00606DC8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				17E182B51A6B8AAC00B84D1A /* MemoBoxCoverOrange.png */,
+				17E182B31A6B8A9700B84D1A /* headAndWordIconNoOrange.png */,
 				19E305421A6B7A5500332B90 /* headIconNoOrange.png */,
 				19E3053D1A6B673500332B90 /* CoverImage.png */,
 				19C595C61A6B0CF800FD6FE6 /* avatar.png */,
@@ -371,7 +377,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */;
+			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -397,8 +403,10 @@
 			files = (
 				192F41421A6A011400606DC8 /* Main.storyboard in Resources */,
 				192F41471A6A011400606DC8 /* LaunchScreen.xib in Resources */,
+				17E182B41A6B8A9700B84D1A /* headAndWordIconNoOrange.png in Resources */,
 				192F41441A6A011400606DC8 /* Images.xcassets in Resources */,
 				19E305431A6B7A5500332B90 /* headIconNoOrange.png in Resources */,
+				17E182B61A6B8AAC00B84D1A /* MemoBoxCoverOrange.png in Resources */,
 				19C595C71A6B0CF800FD6FE6 /* avatar.png in Resources */,
 				192F41671A6A274200606DC8 /* gradient.png in Resources */,
 				192F41611A6A0C2700606DC8 /* sample.jpg in Resources */,
@@ -628,7 +636,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */ = {
+		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				192F41541A6A011400606DC8 /* Debug */,

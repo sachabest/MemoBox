@@ -52,7 +52,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SACHA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lji-jI-0ev">
-                                            <rect key="frame" x="8" y="88" width="144" height="63.5"/>
+                                            <rect key="frame" x="8" y="88" width="144" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="63.5" id="rQp-FE-LS7"/>
                                             </constraints>
@@ -120,14 +120,17 @@
                     <navigationItem key="navigationItem" id="Pe0-Ok-iqK">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="Fb5-6V-7p9">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="DJ3-X9-GhB">
-                                    <rect key="frame" x="-0.5" y="0.5" width="150" height="33"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headAndWordIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="DJ3-X9-GhB">
+                                    <rect key="frame" x="0.0" y="-12" width="150" height="45"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" image="YES" staticText="YES"/>
+                            </accessibility>
                         </view>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -305,10 +308,10 @@
                     <navigationItem key="navigationItem" id="jLB-6Z-5pf">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="rIj-u3-1IR">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="yQj-yl-OKY">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headAndWordIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="yQj-yl-OKY">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
                                 </imageView>
                             </subviews>
@@ -391,6 +394,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="back:" destination="WpS-g3-fj8" eventType="touchUpInside" id="w61-GY-gAi"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGA-8p-vaf">
                                 <rect key="frame" x="36" y="163" width="303" height="324"/>
@@ -426,6 +432,22 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="sqv-Ft-aFE">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="huV-X5-lSW">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headAndWordIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="C1l-58-bU7">
+                                    <rect key="frame" x="0.0" y="-12" width="150" height="45"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" image="YES" staticText="YES"/>
+                            </accessibility>
+                        </view>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="input" destination="nGA-8p-vaf" id="6hm-OU-MdT"/>
@@ -463,7 +485,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRo-1I-ymm">
-                                                    <rect key="frame" x="10" y="23" width="30" height="25.5"/>
+                                                    <rect key="frame" x="10" y="23" width="30" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25.5" id="l2c-gd-aEM"/>
                                                     </constraints>
@@ -485,8 +507,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="eRo-1I-ymm" secondAttribute="trailing" constant="10" id="yt6-rN-2de"/>
                                             </constraints>
                                         </view>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzq-Hz-DPf">
-                                            <rect key="frame" x="58" y="0.0" width="309" height="99.5"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzq-Hz-DPf">
+                                            <rect key="frame" x="58" y="0.0" width="309" height="100"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <string key="text">This is a test memo. WIth tons of content about how Dhruv can't code for shit and how Hunter can't get over his SAEness and how Ali is simply annoying. THis is a small parable about PennApps and is solely meant to fill space not hurt anyone.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -579,6 +601,22 @@
                             <constraint firstItem="PBC-2L-9lz" firstAttribute="leading" secondItem="UkG-fw-cLH" secondAttribute="leadingMargin" constant="-16" id="rdC-aC-I6j"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mDa-eW-ihK">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="KA1-LQ-hYR">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headAndWordIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="0ar-Nf-Aax">
+                                    <rect key="frame" x="0.0" y="-12" width="150" height="45"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" image="YES" staticText="YES"/>
+                            </accessibility>
+                        </view>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="containerView" destination="PBC-2L-9lz" id="VXa-kb-VHK"/>
@@ -647,6 +685,22 @@
                             <constraint firstItem="gvp-i6-vHT" firstAttribute="leading" secondItem="rFB-6d-72J" secondAttribute="leadingMargin" constant="95" id="hE6-Sc-csV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jpd-fv-Twi">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="WYo-z9-3Gi">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headAndWordIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-UL-3vv">
+                                    <rect key="frame" x="0.0" y="-12" width="150" height="45"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" image="YES" staticText="YES"/>
+                            </accessibility>
+                        </view>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="confirm" destination="6xQ-ZT-PFt" id="faP-T5-DS4"/>
@@ -716,6 +770,22 @@
                             <constraint firstItem="f5f-te-DSm" firstAttribute="top" secondItem="UfI-3P-pah" secondAttribute="bottom" constant="43" id="tLX-ww-t4G"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Cev-oB-d6N">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="KTu-4V-jas">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headAndWordIconNoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="aDc-hI-90h">
+                                    <rect key="frame" x="0.0" y="-12" width="150" height="45"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" image="YES" staticText="YES"/>
+                            </accessibility>
+                        </view>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="confirm" destination="UfI-3P-pah" id="IAk-7F-RHW"/>
@@ -749,10 +819,11 @@
     <resources>
         <image name="avatar" width="500" height="500"/>
         <image name="gradient" width="1000" height="240"/>
+        <image name="headAndWordIconNoOrange" width="829" height="143"/>
         <image name="headIconNoOrange" width="693" height="759"/>
         <image name="sample" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BQF-jS-X20"/>
+        <segue reference="Oy9-7m-mk9"/>
     </inferredMetricsTieBreakers>
 </document>
