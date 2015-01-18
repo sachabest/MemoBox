@@ -54,7 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		192F41331A6A011400606DC8 /* MemoBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		192F41331A6A011400606DC8 /* memobox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memobox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		192F41371A6A011400606DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192F41381A6A011400606DC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		192F413A1A6A011400606DC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		192F41341A6A011400606DC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				192F41331A6A011400606DC8 /* MemoBox.app */,
+				192F41331A6A011400606DC8 /* memobox.app */,
 				192F414C1A6A011400606DC8 /* MemoBoxTests.xctest */,
 			);
 			name = Products;
@@ -289,7 +289,7 @@
 			);
 			name = MemoBox;
 			productName = MemoBox;
-			productReference = 192F41331A6A011400606DC8 /* MemoBox.app */;
+			productReference = 192F41331A6A011400606DC8 /* memobox.app */;
 			productType = "com.apple.product-type.application";
 		};
 		192F414B1A6A011400606DC8 /* MemoBoxTests */ = {
@@ -329,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */;
+			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -508,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -516,7 +517,8 @@
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = memobox;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -525,6 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -533,7 +536,8 @@
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = memobox;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -574,7 +578,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */ = {
+		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				192F41541A6A011400606DC8 /* Debug */,
