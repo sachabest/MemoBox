@@ -33,6 +33,7 @@ static NSString * const reuseIdentifier = @"Contact";
         install[@"user"] = [PFUser currentUser];
         [install saveInBackground];
     }
+    
     // Do any additional setup after loading the view.
 }
 
@@ -58,6 +59,7 @@ static NSString * const reuseIdentifier = @"Contact";
         [self showLoginUI:self];
     } else {
         [ParseManager loadAllContacts];
+        contactData = [ParseManager contactData];
         [self.collectionView reloadData];
     }
 }
@@ -294,15 +296,7 @@ person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identi
     if (!cell) {
         cell = [[BrowseCollectionViewCell alloc] init];
     }
-    if (indexPath.item == 3) {
-        NSLog(@"#");
-        NSString *str = @"df";
-        if (str) {
-            
-        }
-    }
-    NSLog(@"%ld", indexPath.item);
-    PFObject *contact = [ParseManager contactData][indexPath.item];
+    PFObject *contact = contactData[indexPath.item];
     if (contact[@"photo"] != nil) {
         cell.picture.file = contact[@"photo"];
     } else {
