@@ -27,6 +27,8 @@ static NSString * const reuseIdentifier = @"Contact";
     //[self.collectionView registerClass:[BrowseCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     cellDimension = ([[UIScreen mainScreen] bounds].size.width - 0 /* padding */ ) / 2.0;
     [ParseManager loadAllContacts];
+    contactData = [ParseManager contactData];
+    [self.collectionView reloadData];
     self.collectionView.allowsSelection = YES;
     PFInstallation *install = [PFInstallation currentInstallation];
     if ([PFUser currentUser] && install && !install[@"user"]) {
@@ -299,13 +301,14 @@ person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identi
     PFObject *contact = contactData[indexPath.item];
     if (contact[@"photo"] != nil) {
         cell.picture.file = contact[@"photo"];
+        [cell.picture loadInBackground:^(UIImage *image, NSError *error) {
+            cell.picture.contentMode = UIViewContentModeScaleAspectFill;
+        }];
     } else {
         cell.picture.image = [UIImage imageNamed:@"avatar"];
     }
     cell.name.text = contact[@"name"];
-    [cell.picture loadInBackground:^(UIImage *image, NSError *error) {
-        cell.picture.contentMode = UIViewContentModeScaleAspectFill;
-    }];
+
     // Configure the cell
     
     return cell;

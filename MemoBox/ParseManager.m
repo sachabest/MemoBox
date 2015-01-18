@@ -37,12 +37,9 @@ static NSArray *contactData;
     new[@"name"] = name;
     new[@"phone"] = number;
     new[@"user"] = [PFUser currentUser];
-    [new saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
+    [new save];
             [[PFUser currentUser] addObject:new forKey:@"contacts"];
-            [[PFUser currentUser] saveInBackground];
-        }
-    }];
+            [[PFUser currentUser] save];
     // does not handle duplicates
     return new;
 }
@@ -67,11 +64,17 @@ static NSArray *contactData;
 }
 
 + (void)loadAllContacts {
-    [[PFUser currentUser] fetchIfNeeded];
+    /*
+    [[PFUser currentUser] fetch];
     contactData = [PFUser currentUser][@"contacts"];
     // this is a heavy operation
     for (PFObject *contact in contactData) {
         [contact fetch];
+    } */
+    if ([PFUser currentUser]) {
+        PFQuery *contacts = [PFQuery queryWithClassName:@"Contact"];
+        [contacts whereKey:@"user" equalTo:[PFUser currentUser]];
+        contactData = [contacts findObjects];
     }
     /** not necessary
     if ([ParseManager numContacts] == 0) {
@@ -89,8 +92,6 @@ static NSArray *contactData;
     } **/
 }
 + (NSArray *)contactData {
-    [[PFUser currentUser] fetchIfNeeded];
-    contactData = [PFUser currentUser][@"contacts"];
     return contactData;
 }
 + (NSString *)filterPhone:(NSString *)input {
