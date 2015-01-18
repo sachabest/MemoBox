@@ -56,20 +56,34 @@ app.post('/receive',
                                         console.log(error.headers.Location);
                                         Parse.Cloud.httpRequest({url: error.headers.Location}).then(
                                             function(response) {
-                                                console.log("response:");
                                                 var image = new Image();
-                                                image.setData(response.buffer);
-                                                console.log(image.data().toString("base64"));
-                                                var file = new Parse.File("myfile.jpg", {base64: image.data().toString("base64")});
-                                                contact.set('photo', file);
-                                                contact.save(null, {
-                                                    success:function() {
-                                                        console.log("save successfully");
-                                                    },
-                                                    error:function() {
-                                                        console.log("save failed");
-                                                    }
-                                                })
+                                                 image.setData(response.buffer, {
+                                                	success:function(img) {
+                                                		console.log("log image.data().toString():");
+                                                		console.log(img.data().toString("base64"));
+                                                		img.data({
+                                                			success:function(buffer) {
+																var file = new Parse.File("myfile.jpg", {base64: buffer.toString("base64")});
+		                                                		file.save().then(function() {
+		                                                			contact.set('photo', file);
+		                                                			contact.save(null, {
+			                                                   			success:function() {
+			                                                        		console.log("save successfully");
+			                                                    		},
+			                                                    		error:function() {
+			                                                        		console.log("save failed");
+			                                                    		}
+		                                                			});		},
+		                                                			function(error) {
+		                                                				console.log(error);
+																});
+                                                			}
+                                                		});
+                                                	},
+                                                	error:function() {
+                                                		console.log("invalid image data");
+                                                	}
+                                                });
                                             },
                                             function(error) {
                                                 console.log("wrong error");
@@ -96,7 +110,7 @@ var requestPictureHelper = function(request) {
     client.sendSms({
         to: request.params.receiverNumber,
         from: '+14157636299',
-        body: 'Hi there!' + request.params.username + 'would love a picture of you to remember you by. Please add #' + request.params.userNumber + ' as a caption to the picture.'
+        body: 'Hi there! ' + request.params.username + ' would love a picture of you to remember you by. As a caption to the picture please add the following code:'
     },
     function(err, responseData) {
         if (err) {
@@ -104,6 +118,20 @@ var requestPictureHelper = function(request) {
         } else {
             console.log(responseData.from);
             console.log(responseData.body);
+            client.sendSms({
+                to: request.params.receiverNumber,
+                from: '+14157636299',
+                body: '#' + request.params.userNumber
+            },
+            function(err, responseData) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log(responseData.from);
+                    console.log(responseData.body);
+                }
+            }
+            );
         }
     }
     );
@@ -120,14 +148,27 @@ Parse.Cloud.define("requestMemo", function(request, response) {
     client.sendSms({
         to: request.params.receiverNumber,
         from: '+14157636299',
-        body: 'Hi there! ' + request.params.username + 'would love a brief summary of your last conversation. Please write a'
-         + ' few sentences ending with #' + request.params.userNumber + '.'
+        body: 'Hi there! ' + request.params.username + ' would love a brief summary of your last conversation. Please write a'
+         + ' few sentences ending with the following code: #' + request.params.userNumber + '.'
     },  function(err, responseData) {
             if (err) {
                 console.log(err);
             } else {
                 console.log(responseData.from);
                 console.log(responseData.body);
+                client.sendSms({
+                    to: request.params.receiverNumber,
+                    from: '+14157636299',
+                    body: '#' + request.params.userNumber
+                },  function(err, responseData) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log(responseData.from);
+                            console.log(responseData.body);
+                        }
+                    }
+                );
             }
         }
     );

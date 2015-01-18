@@ -17,6 +17,7 @@
     NSMutableDictionary *contacts;
     float cellDimension;
     PFObject *selectedContact;
+    NSArray *contactData;
 }
 
 - (IBAction)checkAddressBookAccess:(id)sender;
