@@ -71,7 +71,7 @@ static NSArray *contactData;
     contactData = [PFUser currentUser][@"contacts"];
     // this is a heavy operation
     for (PFObject *contact in contactData) {
-        [contact fetchIfNeeded];
+        [contact fetch];
     }
     /** not necessary
     if ([ParseManager numContacts] == 0) {
@@ -89,6 +89,8 @@ static NSArray *contactData;
     } **/
 }
 + (NSArray *)contactData {
+    [[PFUser currentUser] fetchIfNeeded];
+    contactData = [PFUser currentUser][@"contacts"];
     return contactData;
 }
 + (NSString *)filterPhone:(NSString *)input {

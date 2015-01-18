@@ -47,7 +47,7 @@ static NSDateFormatter *format;
     // Dispose of any resources that can be recreated.
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return _contact[@"name"];
+    return [@"All Memos with " stringByAppendingString: _contact[@"name"]];
 }
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
     UITextView *calculationView = [[UITextView alloc] init];
@@ -74,6 +74,7 @@ static NSDateFormatter *format;
     static NSString *CellIdentifier = @"Cell";
     MemoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.textView.text = object[@"text"];
+    //cell.writtenByLabel.text = _contact[@"name"];
     // support for photos soon
     NSDate *forView = object.createdAt;
     [format setDateFormat:@"MMM"];

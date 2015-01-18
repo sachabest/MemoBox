@@ -89,8 +89,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTn-CU-gV8">
-                                            <rect key="frame" x="8" y="8" width="250" height="144"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTn-CU-gV8">
+                                            <rect key="frame" x="8" y="8" width="144" height="144"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                             <state key="normal" title="ADD SOMEONE">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -508,12 +508,12 @@
         <scene sceneID="RyM-yq-YCr">
             <objects>
                 <tableViewController id="pis-HP-ZoY" customClass="MemoTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="65" sectionFooterHeight="22" id="NoH-us-6MI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="152" sectionHeaderHeight="65" sectionFooterHeight="22" id="NoH-us-6MI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="VEx-oV-2Rp" customClass="MemoTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="152" id="VEx-oV-2Rp" customClass="MemoTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VEx-oV-2Rp" id="Tch-3d-wxn">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -526,7 +526,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Iao-aI-3KI"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -535,7 +535,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25.5" id="l2c-gd-aEM"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -554,21 +554,27 @@
                                             </constraints>
                                         </view>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzq-Hz-DPf">
-                                            <rect key="frame" x="58" y="0.0" width="309" height="100"/>
+                                            <rect key="frame" x="58" y="0.0" width="309" height="143"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <string key="text">This is a test memo. WIth tons of content about how Dhruv can't code for shit and how Hunter can't get over his SAEness and how Ali is simply annoying. THis is a small parable about PennApps and is solely meant to fill space not hurt anyone.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="dzq-Hz-DPf" firstAttribute="top" secondItem="Tch-3d-wxn" secondAttribute="top" id="4JF-1t-s9W"/>
+                                        <constraint firstItem="dzq-Hz-DPf" firstAttribute="top" secondItem="Tch-3d-wxn" secondAttribute="topMargin" id="FNQ-vf-f3R"/>
                                         <constraint firstAttribute="bottom" secondItem="dzq-Hz-DPf" secondAttribute="bottom" id="Hjx-l0-BCt"/>
                                         <constraint firstItem="dzq-Hz-DPf" firstAttribute="leading" secondItem="JyK-xj-qG6" secondAttribute="trailing" constant="8" id="Wck-i5-sjE"/>
                                         <constraint firstItem="JyK-xj-qG6" firstAttribute="top" secondItem="Tch-3d-wxn" secondAttribute="top" id="lRg-E6-UEb"/>
                                         <constraint firstItem="JyK-xj-qG6" firstAttribute="leading" secondItem="Tch-3d-wxn" secondAttribute="leading" id="vUk-as-SEy"/>
                                         <constraint firstAttribute="trailing" secondItem="dzq-Hz-DPf" secondAttribute="trailing" constant="8" id="xOa-m2-03Q"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="4JF-1t-s9W"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dayLabel" destination="eRo-1I-ymm" id="D8U-FW-T6U"/>
@@ -586,7 +592,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3K8-k1-RXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441.5" y="66.5"/>
+            <point key="canvasLocation" x="2441.5" y="60.5"/>
         </scene>
         <!--Memo Container View Controller-->
         <scene sceneID="6us-CU-NLa">
@@ -684,7 +690,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="You'll be able to see Sacha's memo as soon as he sends it in. We just sent them a text prompt." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6xQ-ZT-PFt">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="You'll be able to see Sacha's memo as soon as he sends it in. We just sent them a text prompt." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6xQ-ZT-PFt">
                                 <rect key="frame" x="67" y="171" width="240" height="209"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
