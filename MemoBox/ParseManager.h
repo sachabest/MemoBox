@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define kUserPhone @"username'
+#define kUserName @"additional"
+
 @interface ParseManager : NSObject
 
 + (BOOL)isLoggedIn;
@@ -20,5 +23,6 @@
 + (PFObject *)getContact:(NSString *)objectId;
 + (void)loadAllContacts;
 + (NSArray *)contactData;
++ (NSString *)filterPhone:(NSString *)input;
 
 @end
