@@ -38,6 +38,7 @@
 		192F418A1A6A2B2700606DC8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F41891A6A2B2700606DC8 /* libsqlite3.dylib */; };
 		192F418D1A6A382A00606DC8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418C1A6A382A00606DC8 /* Social.framework */; };
 		192F418F1A6A383300606DC8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192F418E1A6A383300606DC8 /* Accounts.framework */; };
+		19AAF0EB1A6C373000F89494 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AAF0EA1A6C373000F89494 /* AboutViewController.m */; };
 		19AE15051A6BAE7B006DB555 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AE15041A6BAE7B006DB555 /* Crashlytics.framework */; };
 		19C595C11A6AEF3900FD6FE6 /* MemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */; };
 		19C595C51A6B03B300FD6FE6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C41A6B03B300FD6FE6 /* ContactViewController.m */; };
@@ -103,6 +104,8 @@
 		192F418B1A6A356200606DC8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		192F418C1A6A382A00606DC8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		192F418E1A6A383300606DC8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		19AAF0E91A6C373000F89494 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		19AAF0EA1A6C373000F89494 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		19AE15041A6BAE7B006DB555 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		19C595BF1A6AEF3900FD6FE6 /* MemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoTableViewController.h; sourceTree = "<group>"; };
 		19C595C01A6AEF3900FD6FE6 /* MemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoTableViewController.m; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 		192F41351A6A011400606DC8 /* MemoBox */ = {
 			isa = PBXGroup;
 			children = (
+				19AAF0E81A6C372800F89494 /* AboutView */,
 				19E305331A6B5B5D00332B90 /* WriteView */,
 				19E305321A6B5B5700332B90 /* RequestView */,
 				19C595C21A6B03A500FD6FE6 /* ContactView */,
@@ -253,6 +257,15 @@
 				192F41641A6A0C6C00606DC8 /* BrowseCollectionViewCell.m */,
 			);
 			name = BrowseView;
+			sourceTree = "<group>";
+		};
+		19AAF0E81A6C372800F89494 /* AboutView */ = {
+			isa = PBXGroup;
+			children = (
+				19AAF0E91A6C373000F89494 /* AboutViewController.h */,
+				19AAF0EA1A6C373000F89494 /* AboutViewController.m */,
+			);
+			name = AboutView;
 			sourceTree = "<group>";
 		};
 		19C595BE1A6AEF2800FD6FE6 /* MemoView */ = {
@@ -461,6 +474,7 @@
 				19E305411A6B717F00332B90 /* MemoContainerViewController.m in Sources */,
 				192F415E1A6A0AC500606DC8 /* BrowseViewController.m in Sources */,
 				192F41391A6A011400606DC8 /* main.m in Sources */,
+				19AAF0EB1A6C373000F89494 /* AboutViewController.m in Sources */,
 				19C595CA1A6B271700FD6FE6 /* MemoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,7 +611,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
-				PROVISIONING_PROFILE = "773bce22-30ad-46ab-81ba-6f564d351c55";
+				PROVISIONING_PROFILE = "cc1d7666-64c4-4873-b75f-0d32dfac2cf0";
 			};
 			name = Debug;
 		};
@@ -617,7 +631,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
-				PROVISIONING_PROFILE = "773bce22-30ad-46ab-81ba-6f564d351c55";
+				PROVISIONING_PROFILE = "cc1d7666-64c4-4873-b75f-0d32dfac2cf0";
 			};
 			name = Release;
 		};

@@ -18,11 +18,10 @@ static NSArray *contactData;
 
 + (int)numContacts {
     PFUser *user = [PFUser currentUser];
-    return (int) [[PFUser currentUser][@"contacts"] count];
+    return (int) contactData.count;
 }
 + (NSArray *)contacts {
-    [[PFUser currentUser] fetchIfNeeded];
-    return [PFUser currentUser][@"contacts"];
+    return contactData;
 }
 + (NSArray *)memosForContact:(PFObject *)contact {
     PFQuery *q = [PFQuery queryWithClassName:@"Memo"];

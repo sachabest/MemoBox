@@ -26,7 +26,6 @@ static NSString * const reuseIdentifier = @"Contact";
     // Register cell classes
     //[self.collectionView registerClass:[BrowseCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     cellDimension = ([[UIScreen mainScreen] bounds].size.width - 0 /* padding */ ) / 2.0;
-    [ParseManager loadAllContacts];
     contactData = [ParseManager contactData];
     [self.collectionView reloadData];
     self.collectionView.allowsSelection = YES;
