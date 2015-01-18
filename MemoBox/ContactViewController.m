@@ -20,6 +20,8 @@
     _name.text = _contact[@"name"];
     _photo.file = _contact[@"photo"];
     [_photo loadInBackground];
+    _photo.layer.cornerRadius = 50;
+    _photo.clipsToBounds = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -55,7 +57,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"view"]) {
-        [(MemoTableViewController *)segue.destinationViewController setContact:_contact];
+        [(MemoContainerViewController *)segue.destinationViewController setContact:_contact];
     } else if ([segue.identifier isEqualToString:@"request"]) {
         [(RequestViewController *)segue.destinationViewController setName:_contact[@"name"]];
     } else if ([segue.identifier isEqualToString:@"write"]) {

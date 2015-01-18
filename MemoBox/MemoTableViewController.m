@@ -29,11 +29,11 @@ static NSDateFormatter *format;
     PFQuery *query = [PFQuery queryWithClassName:@"Memo"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     [query whereKey:@"contact" equalTo:_contact];
+    [query orderByDescending:@"createdAt"];
     return query;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -46,7 +46,9 @@ static NSDateFormatter *format;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return _contact[@"name"];
+}
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
     UITextView *calculationView = [[UITextView alloc] init];
     [calculationView setAttributedText:text];
@@ -83,14 +85,6 @@ static NSDateFormatter *format;
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 59)];
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
-    btn.backgroundColor = [UIColor colorWithRed:248/255.0 green:148/255.0 blue:6/255.0 alpha:1];
-    btn.titleLabel.textColor = [UIColor whiteColor];
-    
-    return view;
-}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
