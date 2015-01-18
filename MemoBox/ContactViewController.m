@@ -20,6 +20,8 @@
     _name.text = _contact[@"name"];
     _photo.file = _contact[@"photo"];
     [_photo loadInBackground];
+    _photo.layer.cornerRadius = 50;
+    _photo.clipsToBounds = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -34,11 +36,7 @@
                                          @"userNumber" : [PFUser currentUser][@"username"],
                                          @"username" : [PFUser currentUser][@"additional"]}
                                 block:^(id object, NSError *error) {
-                                    [[[UIAlertView alloc] initWithTitle:@"Request Sent!"
-                                                                message:@"Your memo request has been sent!"
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil, nil] show];
+                                    [self performSegueWithIdentifier:@"request" sender:self];
                                 }];
 }
 
@@ -59,7 +57,11 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"view"]) {
-        [(MemoTableViewController *)segue.destinationViewController setContact:_contact];
+        [(MemoContainerViewController *)segue.destinationViewController setContact:_contact];
+    } else if ([segue.identifier isEqualToString:@"request"]) {
+        [(RequestViewController *)segue.destinationViewController setName:_contact[@"name"]];
+    } else if ([segue.identifier isEqualToString:@"write"]) {
+        [(WriteViewController *)segue.destinationViewController setContact:_contact];
     }
 }
 

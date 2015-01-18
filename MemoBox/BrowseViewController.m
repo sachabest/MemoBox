@@ -8,6 +8,7 @@
 
 #import "BrowseViewController.h"
 
+#define kOrange [UIColor colorWithRed:0.973 green:0.58 blue:0.024 alpha:1]
 @interface BrowseViewController ()
 
 @end
@@ -55,6 +56,9 @@ static NSString * const reuseIdentifier = @"Contact";
     [super viewDidAppear:animated];
     if (![ParseManager isLoggedIn]) {
         [self showLoginUI:self];
+    } else {
+        [ParseManager loadAllContacts];
+        [self.collectionView reloadData];
     }
 }
 
@@ -64,6 +68,10 @@ static NSString * const reuseIdentifier = @"Contact";
     signup.fields = PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsAdditional | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton;
     login.delegate = self;
     signup.delegate = self;
+    login.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon"]];
+    login.logInView.backgroundColor = kOrange;
+    signup.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon"]];
+    signup.signUpView.backgroundColor = kOrange;
     signup.signUpView.usernameField.keyboardType = UIKeyboardTypePhonePad;
     login.logInView.usernameField.keyboardType = UIKeyboardTypePhonePad;
     signup.signUpView.usernameField.placeholder = @"Phone";
@@ -207,7 +215,12 @@ static ABAddressBookRef addressBook;
     new.predicateForEnablingPerson = [NSPredicate predicateWithFormat:@"phoneNumber.@count > 0"];
     [new setDisplayedProperties:[NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonPhoneProperty]]];
     [self presentViewController:new animated:YES completion:^{
-        //
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"How to add someone"
+                                                    message:@"Click on the person you'd like to add. Then, on the next page, click on their phone number for their mobile phone."
+                                                    delegate:nil
+                                           cancelButtonTitle:@"Got it!"
+                                           otherButtonTitles:nil];
+    [alert show];
     }];
     
 }
@@ -215,13 +228,17 @@ static ABAddressBookRef addressBook;
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
 
 }
-- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)
+person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
     NSString *name = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    name = [name stringByAppendingString:@" "];
+    name = [name stringByAppendingString:(__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty)];
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, property);
     NSString *phone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phoneNumbers, identifier);
     phone = [ParseManager filterPhone:phone];
     selectedContact = [ParseManager addContact:name withNum:phone];
     [self dismissViewControllerAnimated:YES completion:^{
+        [self requestPicture:phone];
         [self performSegueWithIdentifier:@"show" sender:self];
     }];
     // call twillo api here...
@@ -334,4 +351,12 @@ static ABAddressBookRef addressBook;
         [((ContactViewController *)nav.topViewController) setContact:selectedContact];
     }
 }
+
+- (void)requestPicture:(NSString *)phoneNumber {
+    [PFCloud callFunctionInBackground:@"requestPicture"
+                       withParameters:@{ @"receiverNumber" : phoneNumber,
+                                         @"userNumber" : [PFUser currentUser][@"username"],
+                                         @"username" : [PFUser currentUser][@"additional"]}];
+}
+
 @end

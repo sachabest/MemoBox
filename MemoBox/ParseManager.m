@@ -101,5 +101,11 @@ static NSArray *contactData;
     **/
     // create PFInstallation here and push to server with column for pointer to user
 }
-
++ (void)writeMemo:(NSString *)text withContact:(PFObject *)contact {
+    PFObject *memo = [PFObject objectWithClassName:@"Memo"];
+    memo[@"user"] = [PFUser currentUser];
+    memo[@"contact"] = contact;
+    memo[@"text"] = text;
+    [memo saveInBackground];
+}
 @end

@@ -29,11 +29,11 @@ static NSDateFormatter *format;
     PFQuery *query = [PFQuery queryWithClassName:@"Memo"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     [query whereKey:@"contact" equalTo:_contact];
+    [query orderByDescending:@"createdAt"];
     return query;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -46,7 +46,9 @@ static NSDateFormatter *format;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return _contact[@"name"];
+}
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
     UITextView *calculationView = [[UITextView alloc] init];
     [calculationView setAttributedText:text];
