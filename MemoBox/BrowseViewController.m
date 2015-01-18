@@ -217,6 +217,7 @@ static ABAddressBookRef addressBook;
     phone = [ParseManager filterPhone:phone];
     selectedContact = [ParseManager addContact:name withNum:phone];
     [self dismissViewControllerAnimated:YES completion:^{
+        [self requestPicture:phone];
         [self performSegueWithIdentifier:@"show" sender:self];
     }];
     // call twillo api here...
@@ -329,4 +330,12 @@ static ABAddressBookRef addressBook;
         [((ContactViewController *)nav.topViewController) setContact:selectedContact];
     }
 }
+
+- (void)requestPicture:(NSString *)phoneNumber {
+    [PFCloud callFunctionInBackground:@"requestPicture"
+                       withParameters:@{ @"receiverNumber" : phoneNumber,
+                                         @"userNumber" : [PFUser currentUser][@"username"],
+                                         @"username" : [PFUser currentUser][@"additional"]}];
+}
+
 @end
