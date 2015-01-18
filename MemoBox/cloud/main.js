@@ -5,6 +5,8 @@ var client = require('twilio')('AC8815762514fc3fd2ba16c0fc8e2c5d81', '3132ecbec5
 app.use(Express.bodyParser());
 
 
+
+
 app.post('/receive',
     function(req, res) {
         console.log("test " + req.body.MediaUrl0);
@@ -42,18 +44,36 @@ app.post('/receive',
                                 }
                             });
                         } else {
-                            //code to add image to parse
-                            Parse.Cloud.httpRequest({
-                                url: req.body.MediaUrl0,
-                                success: function(response) {
-                                    // The file contents are in response.buffer.
-                                    contact.set('photo', response.buffer);
-                                    contact.save();
-                                }, 
-                                error:function(error){
-                                    console.log("unable to update photo");
-                                }
-                            });
+                            Parse.Cloud.httpRequest({url: req.body.MediaUrl0}).then( 
+                                    function(response) {
+                                        console.log("received image");
+                                        // The file contents are in response.buffer.
+                                        contact.set('photo', response.buffer);
+                                        console.log("saved");
+                                    },
+                                    function(error){
+                                        console.log("made it to error");
+                                        console.log(error.headers.Location);
+                                        Parse.Cloud.httpRequest({url: error.headers.Location}).then( 
+                                            function(response) {
+                                                console.log("response:");
+                                                var image = new Image()
+                                                image.setData(response.buffer);
+                                                var file = new Parse.File("myfile.jpg", {base64: image.data().toString("base64")});
+                                                contact.set('photo', file);
+                                                contact.save(null, {
+                                                    success:function() {
+                                                        console.log("save successfully");
+                                                    },
+                                                    error:function() {
+                                                        console.log("save failed");
+                                                    }
+                                                })
+                                            },
+                                            function(error) {
+                                                console.log("wrong error");
+                                            });
+                                    });
                         }
                     },
                     error: function(object, error) {
