@@ -56,20 +56,34 @@ app.post('/receive',
                                         console.log(error.headers.Location);
                                         Parse.Cloud.httpRequest({url: error.headers.Location}).then(
                                             function(response) {
-                                                console.log("response:");
                                                 var image = new Image();
-                                                image.setData(response.buffer);
-                                                console.log(image.data().toString("base64"));
-                                                var file = new Parse.File("myfile.jpg", {base64: image.data().toString("base64")});
-                                                contact.set('photo', file);
-                                                contact.save(null, {
-                                                    success:function() {
-                                                        console.log("save successfully");
-                                                    },
-                                                    error:function() {
-                                                        console.log("save failed");
-                                                    }
-                                                })
+                                                 image.setData(response.buffer, {
+                                                	success:function(img) {
+                                                		console.log("log image.data().toString():");
+                                                		console.log(img.data().toString("base64"));
+                                                		img.data({
+                                                			success:function(buffer) {
+																var file = new Parse.File("myfile.jpg", {base64: buffer.toString("base64")});
+		                                                		file.save().then(function() {
+		                                                			contact.set('photo', file);
+		                                                			contact.save(null, {
+			                                                   			success:function() {
+			                                                        		console.log("save successfully");
+			                                                    		},
+			                                                    		error:function() {
+			                                                        		console.log("save failed");
+			                                                    		}
+		                                                			});		},
+		                                                			function(error) {
+		                                                				console.log(error);
+																});
+                                                			}
+                                                		});
+                                                	},
+                                                	error:function() {
+                                                		console.log("invalid image data");
+                                                	}
+                                                });
                                             },
                                             function(error) {
                                                 console.log("wrong error");
