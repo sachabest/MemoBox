@@ -110,7 +110,7 @@ var requestPictureHelper = function(request) {
     client.sendSms({
         to: request.params.receiverNumber,
         from: '+14157636299',
-        body: 'Hi there!' + request.params.username + 'would love a picture of you to remember you by. Please add #' + request.params.userNumber + ' as a caption to the picture.'
+        body: 'Hi there! ' + request.params.username + ' would love a picture of you to remember you by. As a caption to the picture please add the following code:'
     },
     function(err, responseData) {
         if (err) {
@@ -118,6 +118,20 @@ var requestPictureHelper = function(request) {
         } else {
             console.log(responseData.from);
             console.log(responseData.body);
+            client.sendSms({
+                to: request.params.receiverNumber,
+                from: '+14157636299',
+                body: '#' + request.params.userNumber
+            },
+            function(err, responseData) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log(responseData.from);
+                    console.log(responseData.body);
+                }
+            }
+            );
         }
     }
     );
@@ -134,14 +148,27 @@ Parse.Cloud.define("requestMemo", function(request, response) {
     client.sendSms({
         to: request.params.receiverNumber,
         from: '+14157636299',
-        body: 'Hi there! ' + request.params.username + 'would love a brief summary of your last conversation. Please write a'
-         + ' few sentences ending with #' + request.params.userNumber + '.'
+        body: 'Hi there! ' + request.params.username + ' would love a brief summary of your last conversation. Please write a'
+         + ' few sentences ending with the following code: #' + request.params.userNumber + '.'
     },  function(err, responseData) {
             if (err) {
                 console.log(err);
             } else {
                 console.log(responseData.from);
                 console.log(responseData.body);
+                client.sendSms({
+                    to: request.params.receiverNumber,
+                    from: '+14157636299',
+                    body: '#' + request.params.userNumber
+                },  function(err, responseData) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log(responseData.from);
+                            console.log(responseData.body);
+                        }
+                    }
+                );
             }
         }
     );
