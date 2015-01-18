@@ -232,7 +232,9 @@ static ABAddressBookRef addressBook;
 person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
     NSString *name = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     name = [name stringByAppendingString:@" "];
-    name = [name stringByAppendingString:(__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty)];
+    NSString *last = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    if (last)
+        name = [name stringByAppendingString:last];
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, property);
     NSString *phone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phoneNumbers, identifier);
     phone = [ParseManager filterPhone:phone];
@@ -284,7 +286,7 @@ person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identi
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row >= [ParseManager numContacts]) {
+    if (indexPath.item >= [ParseManager numContacts]) {
         // i.e. plus button
         return [collectionView dequeueReusableCellWithReuseIdentifier:@"Add" forIndexPath:indexPath];
     }
@@ -292,8 +294,16 @@ person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identi
     if (!cell) {
         cell = [[BrowseCollectionViewCell alloc] init];
     }
-    PFObject *contact = [ParseManager contactData][indexPath.row];
-    if (contact[@"photo"]) {
+    if (indexPath.item == 3) {
+        NSLog(@"#");
+        NSString *str = @"df";
+        if (str) {
+            
+        }
+    }
+    NSLog(@"%ld", indexPath.item);
+    PFObject *contact = [ParseManager contactData][indexPath.item];
+    if (contact[@"photo"] != nil) {
         cell.picture.file = contact[@"photo"];
     } else {
         cell.picture.image = [UIImage imageNamed:@"avatar"];
