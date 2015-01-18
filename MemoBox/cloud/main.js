@@ -44,7 +44,7 @@ app.post('/receive',
                                 }
                             });
                         } else {
-                            Parse.Cloud.httpRequest({url: req.body.MediaUrl0}).then( 
+                            Parse.Cloud.httpRequest({url: req.body.MediaUrl0}).then(
                                     function(response) {
                                         console.log("received image");
                                         // The file contents are in response.buffer.
@@ -54,11 +54,12 @@ app.post('/receive',
                                     function(error){
                                         console.log("made it to error");
                                         console.log(error.headers.Location);
-                                        Parse.Cloud.httpRequest({url: error.headers.Location}).then( 
+                                        Parse.Cloud.httpRequest({url: error.headers.Location}).then(
                                             function(response) {
                                                 console.log("response:");
-                                                var image = new Parse.Image();
+                                                var image = new Image();
                                                 image.setData(response.buffer);
+                                                console.log(image.data().toString("base64"));
                                                 var file = new Parse.File("myfile.jpg", {base64: image.data().toString("base64")});
                                                 contact.set('photo', file);
                                                 contact.save(null, {
