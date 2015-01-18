@@ -58,7 +58,8 @@ static NSDateFormatter *format;
     // check here, if it is one of the cells, that needs to be resized
     // to the size of the contained UITextView
     NSString *text = super.objects[indexPath.row][@"text"];
-    return [self textViewHeightForAttributedText:text andWidth:textFieldWidth] + 75;
+    NSAttributedString *attr = [[NSAttributedString alloc] initWithString:text];
+    return [self textViewHeightForAttributedText:attr andWidth:textFieldWidth] + 75;
 }
 
 #pragma mark - Table view data source
@@ -72,7 +73,7 @@ static NSDateFormatter *format;
     MemoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.textView.text = object[@"text"];
     // support for photos soon
-    NSDate *forView = object[@"createdAt"];
+    NSDate *forView = object.createdAt;
     [format setDateFormat:@"MMM"];
     NSString *month = [format stringFromDate:forView];
     [format setDateFormat:@"dd"];
