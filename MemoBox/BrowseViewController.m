@@ -8,6 +8,7 @@
 
 #import "BrowseViewController.h"
 
+#define kOrange [UIColor colorWithRed:0.973 green:0.58 blue:0.024 alpha:1]
 @interface BrowseViewController ()
 
 @end
@@ -67,6 +68,10 @@ static NSString * const reuseIdentifier = @"Contact";
     signup.fields = PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsAdditional | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton;
     login.delegate = self;
     signup.delegate = self;
+    login.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon"]];
+    login.logInView.backgroundColor = kOrange;
+    signup.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon"]];
+    signup.signUpView.backgroundColor = kOrange;
     signup.signUpView.usernameField.keyboardType = UIKeyboardTypePhonePad;
     login.logInView.usernameField.keyboardType = UIKeyboardTypePhonePad;
     signup.signUpView.usernameField.placeholder = @"Phone";
