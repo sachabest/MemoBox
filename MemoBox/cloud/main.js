@@ -1,6 +1,6 @@
 var Express = require('express');
 var app = Express();
-
+var Image = require("parse-image");
 var client = require('twilio')('AC8815762514fc3fd2ba16c0fc8e2c5d81', '3132ecbec50c5939b917389924c2e1bd');
 app.use(Express.bodyParser());
 
@@ -57,7 +57,7 @@ app.post('/receive',
                                         Parse.Cloud.httpRequest({url: error.headers.Location}).then( 
                                             function(response) {
                                                 console.log("response:");
-                                                var image = new Image()
+                                                var image = new Parse.Image();
                                                 image.setData(response.buffer);
                                                 var file = new Parse.File("myfile.jpg", {base64: image.data().toString("base64")});
                                                 contact.set('photo', file);
