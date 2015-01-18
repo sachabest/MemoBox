@@ -41,10 +41,6 @@
 		19C595C71A6B0CF800FD6FE6 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C595C61A6B0CF800FD6FE6 /* avatar.png */; };
 		19C595CA1A6B271700FD6FE6 /* MemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C91A6B271700FD6FE6 /* MemoTableViewCell.m */; };
 		FF81FF241A6A37890012A969 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF231A6A37890012A969 /* AVFoundation.framework */; };
-		FF81FF2A1A6A399D0012A969 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */; };
-		FF81FF2B1A6A399D0012A969 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */; };
-		FF81FF2C1A6A399D0012A969 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF281A6A399D0012A969 /* OpenEars.framework */; };
-		FF81FF2D1A6A399D0012A969 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF291A6A399D0012A969 /* Slt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,10 +100,6 @@
 		19C595C81A6B271700FD6FE6 /* MemoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoTableViewCell.h; sourceTree = "<group>"; };
 		19C595C91A6B271700FD6FE6 /* MemoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoTableViewCell.m; sourceTree = "<group>"; };
 		FF81FF231A6A37890012A969 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
-		FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
-		FF81FF281A6A399D0012A969 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		FF81FF291A6A399D0012A969 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +125,7 @@
 				192F41721A6A2A9300606DC8 /* ParseCrashReporting.framework in Frameworks */,
 				192F41741A6A2A9300606DC8 /* ParseUI.framework in Frameworks */,
 				192F41731A6A2A9300606DC8 /* ParseFacebookUtils.framework in Frameworks */,
-				FF81FF2D1A6A399D0012A969 /* Slt.framework in Frameworks */,
 				192F41701A6A2A9300606DC8 /* Bolts.framework in Frameworks */,
-				FF81FF2C1A6A399D0012A969 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +267,6 @@
 				192F416D1A6A2A9300606DC8 /* ParseCrashReporting.framework */,
 				192F416E1A6A2A9300606DC8 /* ParseFacebookUtils.framework */,
 				192F416F1A6A2A9300606DC8 /* ParseUI.framework */,
-				FF81FF261A6A399D0012A969 /* AcousticModelEnglish.bundle */,
-				FF81FF271A6A399D0012A969 /* AcousticModelSpanish.bundle */,
-				FF81FF281A6A399D0012A969 /* OpenEars.framework */,
-				FF81FF291A6A399D0012A969 /* Slt.framework */,
 			);
 			name = Framework;
 			path = OpenEarsDistribution/Framework;
@@ -343,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */;
+			buildConfigurationList = 192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -370,9 +356,7 @@
 				192F41421A6A011400606DC8 /* Main.storyboard in Resources */,
 				192F41471A6A011400606DC8 /* LaunchScreen.xib in Resources */,
 				192F41441A6A011400606DC8 /* Images.xcassets in Resources */,
-				FF81FF2B1A6A399D0012A969 /* AcousticModelSpanish.bundle in Resources */,
 				19C595C71A6B0CF800FD6FE6 /* avatar.png in Resources */,
-				FF81FF2A1A6A399D0012A969 /* AcousticModelEnglish.bundle in Resources */,
 				192F41671A6A274200606DC8 /* gradient.png in Resources */,
 				192F41611A6A0C2700606DC8 /* sample.jpg in Resources */,
 			);
@@ -524,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -532,7 +517,8 @@
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MemoBox;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -541,6 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -549,7 +536,8 @@
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MemoBox;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -590,7 +578,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "MemoBox" */ = {
+		192F412E1A6A011400606DC8 /* Build configuration list for PBXProject "memobox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				192F41541A6A011400606DC8 /* Debug */,
