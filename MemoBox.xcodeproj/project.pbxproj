@@ -563,7 +563,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cc1d7666-64c4-4873-b75f-0d32dfac2cf0";
 			};
 			name = Debug;
 		};
@@ -583,7 +583,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cc1d7666-64c4-4873-b75f-0d32dfac2cf0";
 			};
 			name = Release;
 		};
