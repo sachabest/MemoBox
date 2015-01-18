@@ -36,6 +36,7 @@ static NSArray *contactData;
     PFObject *new = [PFObject objectWithClassName:@"Contact"];
     new[@"name"] = name;
     new[@"phone"] = number;
+    new[@"user"] = [PFUser currentUser];
     [new saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [[PFUser currentUser] addObject:new forKey:@"contacts"];

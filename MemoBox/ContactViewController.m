@@ -34,11 +34,7 @@
                                          @"userNumber" : [PFUser currentUser][@"username"],
                                          @"username" : [PFUser currentUser][@"additional"]}
                                 block:^(id object, NSError *error) {
-                                    [[[UIAlertView alloc] initWithTitle:@"Request Sent!"
-                                                                message:@"Your memo request has been sent!"
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil, nil] show];
+                                    [self performSegueWithIdentifier:@"request" sender:self];
                                 }];
 }
 
@@ -60,6 +56,10 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"view"]) {
         [(MemoTableViewController *)segue.destinationViewController setContact:_contact];
+    } else if ([segue.identifier isEqualToString:@"request"]) {
+        [(RequestViewController *)segue.destinationViewController setName:_contact[@"name"]];
+    } else if ([segue.identifier isEqualToString:@"write"]) {
+        // not necessary
     }
 }
 

@@ -27,6 +27,11 @@ static NSString * const reuseIdentifier = @"Contact";
     cellDimension = ([[UIScreen mainScreen] bounds].size.width - 0 /* padding */ ) / 2.0;
     [ParseManager loadAllContacts];
     self.collectionView.allowsSelection = YES;
+    PFInstallation *install = [PFInstallation currentInstallation];
+    if ([PFUser currentUser] && install && !install[@"user"]) {
+        install[@"user"] = [PFUser currentUser];
+        [install saveInBackground];
+    }
     // Do any additional setup after loading the view.
 }
 
