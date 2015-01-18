@@ -83,6 +83,14 @@ static NSDateFormatter *format;
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 59)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
+    btn.backgroundColor = [UIColor colorWithRed:248/255.0 green:148/255.0 blue:6/255.0 alpha:1];
+    btn.titleLabel.textColor = [UIColor whiteColor];
+    
+    return view;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

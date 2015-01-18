@@ -43,6 +43,7 @@
 		19E305361A6B5B6C00332B90 /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E305351A6B5B6C00332B90 /* RequestViewController.m */; };
 		19E305391A6B5B7400332B90 /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E305381A6B5B7400332B90 /* WriteViewController.m */; };
 		19E3053C1A6B5FD700332B90 /* WriteConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E3053B1A6B5FD700332B90 /* WriteConfirmViewController.m */; };
+		19E3053E1A6B673500332B90 /* CoverImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 19E3053D1A6B673500332B90 /* CoverImage.png */; };
 		FF81FF241A6A37890012A969 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF231A6A37890012A969 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		19E305381A6B5B7400332B90 /* WriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
 		19E3053A1A6B5FD700332B90 /* WriteConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteConfirmViewController.h; sourceTree = "<group>"; };
 		19E3053B1A6B5FD700332B90 /* WriteConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteConfirmViewController.m; sourceTree = "<group>"; };
+		19E3053D1A6B673500332B90 /* CoverImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoverImage.png; sourceTree = "<group>"; };
 		FF81FF231A6A37890012A969 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 		192F415F1A6A0C1F00606DC8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				19E3053D1A6B673500332B90 /* CoverImage.png */,
 				19C595C61A6B0CF800FD6FE6 /* avatar.png */,
 				192F41661A6A274200606DC8 /* gradient.png */,
 				192F41601A6A0C2700606DC8 /* sample.jpg */,
@@ -390,6 +393,7 @@
 				19C595C71A6B0CF800FD6FE6 /* avatar.png in Resources */,
 				192F41671A6A274200606DC8 /* gradient.png in Resources */,
 				192F41611A6A0C2700606DC8 /* sample.jpg in Resources */,
+				19E3053E1A6B673500332B90 /* CoverImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +554,7 @@
 				);
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
 				PROVISIONING_PROFILE = "";
@@ -569,6 +574,7 @@
 				);
 				GCC_PREFIX_HEADER = MemoBox/PrefixHeader.pch;
 				INFOPLIST_FILE = MemoBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MemoBox;
 				PROVISIONING_PROFILE = "";
