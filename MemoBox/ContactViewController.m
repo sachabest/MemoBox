@@ -31,7 +31,8 @@
 - (IBAction)requestMemo:(id)sender {
     [PFCloud callFunctionInBackground:@"requestMemo"
                        withParameters:@{ @"receiverNumber" : _phone.text,
-                                         @"userNumber" : [PFUser currentUser][@"username"]}
+                                         @"userNumber" : [PFUser currentUser][@"username"],
+                                         @"username" : [PFUser currentUser][@"additional"]}
                                 block:^(id object, NSError *error) {
                                     [[[UIAlertView alloc] initWithTitle:@"Request Sent!"
                                                                 message:@"Your memo request has been sent!"
@@ -58,7 +59,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"view"]) {
-        
+        [(MemoTableViewController *)segue.destinationViewController setContact:_contact];
     }
 }
 

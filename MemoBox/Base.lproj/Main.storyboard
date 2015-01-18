@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="2040.5" y="780.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Memo Table View Controller-->
         <scene sceneID="RyM-yq-YCr">
             <objects>
-                <tableViewController id="pis-HP-ZoY" sceneMemberID="viewController">
+                <tableViewController id="pis-HP-ZoY" customClass="MemoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="65" sectionFooterHeight="22" id="NoH-us-6MI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
