@@ -61,7 +61,8 @@ Parse.Cloud.define("requestMemo", function(request, response) {
     client.sendSms({
         to: request.params.receiverNumber,
         from: '+14157636299',
-        body: 'Testinggg #' + request.params.userNumber
+        body: 'Hi there!' + request.params.username + 'would love a brief summary of your last conversation. Please write a'
+         + ' few sentences ending with #' + request.params.userNumber + '.'
     },
     function(err, responseData) {
         if (err) {
