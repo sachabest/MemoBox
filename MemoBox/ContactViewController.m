@@ -59,7 +59,7 @@
     } else if ([segue.identifier isEqualToString:@"request"]) {
         [(RequestViewController *)segue.destinationViewController setName:_contact[@"name"]];
     } else if ([segue.identifier isEqualToString:@"write"]) {
-        // not necessary
+        [(WriteViewController *)segue.destinationViewController setContact:_contact];
     }
 }
 

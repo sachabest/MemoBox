@@ -42,6 +42,7 @@
 		19C595CA1A6B271700FD6FE6 /* MemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C595C91A6B271700FD6FE6 /* MemoTableViewCell.m */; };
 		19E305361A6B5B6C00332B90 /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E305351A6B5B6C00332B90 /* RequestViewController.m */; };
 		19E305391A6B5B7400332B90 /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E305381A6B5B7400332B90 /* WriteViewController.m */; };
+		19E3053C1A6B5FD700332B90 /* WriteConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E3053B1A6B5FD700332B90 /* WriteConfirmViewController.m */; };
 		FF81FF241A6A37890012A969 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81FF231A6A37890012A969 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,8 @@
 		19E305351A6B5B6C00332B90 /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
 		19E305371A6B5B7400332B90 /* WriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteViewController.h; sourceTree = "<group>"; };
 		19E305381A6B5B7400332B90 /* WriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
+		19E3053A1A6B5FD700332B90 /* WriteConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteConfirmViewController.h; sourceTree = "<group>"; };
+		19E3053B1A6B5FD700332B90 /* WriteConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteConfirmViewController.m; sourceTree = "<group>"; };
 		FF81FF231A6A37890012A969 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -267,6 +270,8 @@
 			children = (
 				19E305371A6B5B7400332B90 /* WriteViewController.h */,
 				19E305381A6B5B7400332B90 /* WriteViewController.m */,
+				19E3053A1A6B5FD700332B90 /* WriteConfirmViewController.h */,
+				19E3053B1A6B5FD700332B90 /* WriteConfirmViewController.m */,
 			);
 			name = WriteView;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 			files = (
 				19C595C51A6B03B300FD6FE6 /* ContactViewController.m in Sources */,
 				19C595C11A6AEF3900FD6FE6 /* MemoTableViewController.m in Sources */,
+				19E3053C1A6B5FD700332B90 /* WriteConfirmViewController.m in Sources */,
 				192F413C1A6A011400606DC8 /* AppDelegate.m in Sources */,
 				192F41651A6A0C6C00606DC8 /* BrowseCollectionViewCell.m in Sources */,
 				19E305391A6B5B7400332B90 /* WriteViewController.m in Sources */,

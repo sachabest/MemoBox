@@ -24,5 +24,6 @@
 + (void)loadAllContacts;
 + (NSArray *)contactData;
 + (NSString *)filterPhone:(NSString *)input;
++ (void)writeMemo:(NSString *)text withContact:(PFObject *)contact;
 
 @end

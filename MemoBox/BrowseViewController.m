@@ -55,6 +55,9 @@ static NSString * const reuseIdentifier = @"Contact";
     [super viewDidAppear:animated];
     if (![ParseManager isLoggedIn]) {
         [self showLoginUI:self];
+    } else {
+        [ParseManager loadAllContacts];
+        [self.collectionView reloadData];
     }
 }
 
