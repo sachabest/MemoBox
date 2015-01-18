@@ -149,7 +149,7 @@ Parse.Cloud.define("requestMemo", function(request, response) {
         to: request.params.receiverNumber,
         from: '+14157636299',
         body: 'Hi there! ' + request.params.username + ' would love a brief summary of your last conversation. Please write a'
-         + ' few sentences ending with the following code: #' + request.params.userNumber + '.'
+         + ' few sentences ending with the following code:'
     },  function(err, responseData) {
             if (err) {
                 console.log(err);
@@ -166,40 +166,40 @@ Parse.Cloud.define("requestMemo", function(request, response) {
                         } else {
                             console.log(responseData.from);
                             console.log(responseData.body);
+                            //request picture if still not sent
+                            var User = Parse.Object.extend("User");
+                            var queryForUser = new Parse.Query(User);
+                            queryForUser.equalTo("username", request.params.userNumber);
+
+                            var Contact = Parse.Object.extend("Contact");
+                            var queryForContact = new Parse.Query(Contact);
+                            queryForContact.equalTo("phone", request.params.receiverNumber);
+
+                            queryForUser.first({
+                                success: function(user) {
+                                    queryForContact.first({
+                                        success: function(contact) {
+
+                                            if (contact.get("photo") === undefined) {
+
+                                                requestPictureHelper(request);
+                                            }
+                                        },
+                                        error: function(object, error) {
+                                            console.log("error querying for contact");
+                                        }
+                                    });
+                                },
+                                error: function(object, error) {
+                                    console.log("error querying for user");
+                                }
+                            });
                         }
                     }
                 );
             }
         }
     );
-
-    //request picture if still not sent
-    var User = Parse.Object.extend("User");
-    var queryForUser = new Parse.Query(User);
-    queryForUser.equalTo("username", request.params.userNumber);
-
-    var Contact = Parse.Object.extend("Contact");
-    var queryForContact = new Parse.Query(Contact);
-    queryForContact.equalTo("phone", request.params.receiverNumber);
-
-    queryForUser.first({
-        success: function(user) {
-            queryForContact.first({
-                success: function(contact) {
-                    console.log(contact);
-                    if (contact.photo === undefined) {
-                        requestPictureHelper(request);
-                    }
-                },
-                error: function(object, error) {
-                    console.log("error querying for contact");
-                }
-            });
-        },
-        error: function(object, error) {
-            console.log("error querying for user");
-        }
-    });
 });
 
 
